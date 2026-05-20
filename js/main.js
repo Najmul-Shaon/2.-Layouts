@@ -201,7 +201,7 @@ function renderCartDrawer() {
         <div class="empty-icon">🛒</div>
         <h3>Your cart is empty</h3>
         <p>Add some beautiful casting memories to your cart!</p>
-        <a href="shop.html" class="btn btn-primary mt-4">Explore Services</a>
+        <a href="products.html" class="btn btn-primary mt-4">Explore Services</a>
       </div>
     `;
     if (footer) footer.innerHTML = "";
@@ -381,7 +381,7 @@ function initSearch() {
       {
         title: "Photo Gallery",
         category: "Page",
-        url: "shop.html",
+        url: "products.html",
         icon: "🖼️",
       },
       { title: "About Us", category: "Page", url: "about.html", icon: "📖" },
@@ -389,7 +389,7 @@ function initSearch() {
       {
         title: "Video Gallery",
         category: "Gallery",
-        url: "shop.html",
+        url: "products.html",
         icon: "🎥",
       },
     ];

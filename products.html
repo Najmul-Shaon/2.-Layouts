@@ -1,0 +1,1289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services & Gallery – Freeze Ur Memories</title>
+    <!-- <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" /> -->
+    <!-- <link rel="stylesheet" href="../css/shop.css"> -->
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+    <link rel="stylesheet" href="./css/products.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <span>🎁 Free Home Service Across Tamil Nadu!</span>
+      <span>•</span>
+      <span>📞 <a href="tel:09994914389">Call: 09994914389</a></span>
+      <button class="announcement-close">✕</button>
+    </div>
+
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="navbar-logo">
+          <div class="navbar-logo-icon">🖐️</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Freeze Ur Memories</span>
+            <span class="navbar-logo-tagline"
+              >3D Casting & Impression Studio</span
+            >
+          </div>
+        </a>
+        <nav class="navbar-nav">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <div class="nav-item">
+            <a href="shop.html" class="nav-link active">Our Services ▾</a>
+            <div class="nav-dropdown">
+              <a href="product.html?cat=baby">👶 Baby Casting</a>
+              <a href="product.html?cat=sibling">👫 Sibling Casting</a>
+              <a href="product.html?cat=couple">💑 Couple Casting</a>
+              <a href="product.html?cat=family">👨‍👩‍👧‍👦 Family Casting</a>
+              <a href="product.html?cat=pet">🐾 Pet Casting</a>
+            </div>
+          </div>
+          <a href="shop.html" class="nav-link">Gallery</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="navbar-actions">
+          <button class="navbar-action-btn search-toggle">🔍</button>
+          <button class="navbar-action-btn cart-toggle-btn">
+            🛒<span class="navbar-badge" style="display: none">0</span>
+          </button>
+          <a href="account.html" class="navbar-action-btn">👤</a>
+          <a href="contact.html" class="btn btn-primary btn-sm hide-mobile"
+            >Book Now</a
+          >
+          <button class="hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <span class="navbar-logo-name">Freeze Ur Memories</span>
+        <button class="mobile-menu-close">✕</button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="../index.html">🏠 Home</a>
+        <a href="about.html">📖 About Us</a>
+        <a href="shop.html">🛍️ Services</a>
+        <a href="contact.html">📞 Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h2 class="cart-drawer-title">Your Cart</h2>
+        <button class="cart-drawer-close modal-close">✕</button>
+      </div>
+      <div class="cart-drawer-body"></div>
+      <div class="cart-drawer-footer"></div>
+    </div>
+
+    <div class="search-overlay">
+      <div class="search-box">
+        <div class="search-input-wrapper">
+          <span style="font-size: 1.25rem; padding: 0 var(--space-2)">🔍</span>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search services..."
+          />
+          <button class="search-submit">Search</button>
+        </div>
+        <div class="search-suggestions" style="display: none"></div>
+      </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-bg page-hero-bg-pink"></div>
+      <div class="page-hero-dots"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Our Services</span>
+        </div>
+        <div class="page-hero-label">🛍️ Explore Our Work</div>
+        <h1 class="page-hero-title">Our <span>Services & Gallery</span></h1>
+        <p class="page-hero-desc">
+          Every casting tells a unique story. Explore our full range of 3D
+          memory casting services and see our beautiful work.
+        </p>
+      </div>
+    </section>
+
+    <!-- SHOP LAYOUT -->
+    <section class="section shop-section">
+      <div class="container">
+        <div class="sidebar-layout">
+          <!-- SIDEBAR -->
+          <aside class="sidebar">
+            <!-- Categories -->
+            <div class="sidebar-card">
+              <h3 class="sidebar-title">🏷️ Categories</h3>
+              <ul class="sidebar-filter-list">
+                <li>
+                  <label class="sidebar-filter-item active" data-filter="all"
+                    ><span>All Services</span
+                    ><span class="filter-count">12</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-filter-item" data-filter="baby"
+                    ><span>👶 Baby Casting</span
+                    ><span class="filter-count">4</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-filter-item" data-filter="sibling"
+                    ><span>👫 Sibling Casting</span
+                    ><span class="filter-count">2</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-filter-item" data-filter="couple"
+                    ><span>💑 Couple Casting</span
+                    ><span class="filter-count">2</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-filter-item" data-filter="family"
+                    ><span>👨‍👩‍👧‍👦 Family Casting</span
+                    ><span class="filter-count">2</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-filter-item" data-filter="pet"
+                    ><span>🐾 Pet Casting</span
+                    ><span class="filter-count">1</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-filter-item" data-filter="wedding"
+                    ><span>💍 Wedding Casting</span
+                    ><span class="filter-count">1</span></label
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Price Range -->
+            <div class="sidebar-card">
+              <h3 class="sidebar-title">💰 Price Range</h3>
+              <div class="price-range-slider">
+                <div class="price-range-values">
+                  <span>₹2,000</span>
+                  <span>₹15,000</span>
+                </div>
+                <input
+                  type="range"
+                  class="range-input"
+                  min="2000"
+                  max="15000"
+                  value="15000"
+                  id="priceRange"
+                />
+                <div class="price-range-current">
+                  Up to: <strong id="priceVal">₹15,000</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Material Finish -->
+            <div class="sidebar-card">
+              <h3 class="sidebar-title">✨ Finish Type</h3>
+              <ul class="sidebar-checkbox-list">
+                <li>
+                  <label class="sidebar-checkbox"
+                    ><input type="checkbox" checked />
+                    <span>Gold Metallic</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-checkbox"
+                    ><input type="checkbox" checked />
+                    <span>Silver Metallic</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-checkbox"
+                    ><input type="checkbox" checked />
+                    <span>Bronze Finish</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-checkbox">
+                    <span>Natural White</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-checkbox">
+                    <span>Custom Color</span></label
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Frame Style -->
+            <div class="sidebar-card">
+              <h3 class="sidebar-title">🖼️ Frame Style</h3>
+              <ul class="sidebar-checkbox-list">
+                <li>
+                  <label class="sidebar-checkbox"
+                    ><input type="checkbox" checked />
+                    <span>Wooden Frame</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-checkbox"
+                    ><input type="checkbox" checked />
+                    <span>Glass Base</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-checkbox">
+                    <span>Acrylic Stand</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-checkbox"> <span>No Frame</span></label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- CTA -->
+            <div class="sidebar-cta">
+              <div class="sidebar-cta-icon">📞</div>
+              <h4>Need Help?</h4>
+              <p>Call us to discuss your custom requirements.</p>
+              <a
+                href="tel:09994914389"
+                class="btn btn-primary"
+                style="
+                  width: 100%;
+                  justify-content: center;
+                  margin-top: var(--space-3);
+                "
+                >Call Now</a
+              >
+            </div>
+          </aside>
+
+          <!-- MAIN CONTENT -->
+          <div class="shop-main">
+            <!-- Toolbar -->
+            <div class="shop-toolbar">
+              <div class="shop-result-count">
+                Showing <strong>12</strong> services
+              </div>
+              <div class="shop-toolbar-right">
+                <div class="shop-view-toggle">
+                  <button
+                    class="view-btn active"
+                    data-view="grid"
+                    title="Grid View"
+                  >
+                    ⊞
+                  </button>
+                  <button class="view-btn" data-view="list" title="List View">
+                    ☰
+                  </button>
+                </div>
+                <select
+                  class="sort-select form-control"
+                  style="width: auto; padding: var(--space-2) var(--space-4)"
+                >
+                  <option>Sort by: Featured</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                  <option>Most Popular</option>
+                  <option>Newest</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Active Filters -->
+            <div class="active-filters">
+              <span class="active-filter"
+                >All Services
+                <button onclick="this.parentElement.remove()">✕</button></span
+              >
+              <span class="active-filter"
+                >Gold Metallic
+                <button onclick="this.parentElement.remove()">✕</button></span
+              >
+              <button class="clear-filters-btn">Clear All</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+              <div class="product-card reveal delay-1" data-category="baby">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #fce8f3, #fff5e6);
+                    "
+                  >
+                    👶
+                  </div>
+                  <div class="product-card-badges">
+                    <span class="badge badge-primary">Best Seller</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p1"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=1'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Baby Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=1">Baby Hand & Feet Gold Frame</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Capture every tiny detail in stunning gold metallic finish
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(128)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹3,499</span>
+                      <span class="product-price-orig">₹4,500</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p1',
+                          name: 'Baby Hand & Feet Gold Frame',
+                          price: 3499,
+                          emoji: '👶',
+                          variant: 'Gold',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-2" data-category="baby">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #f8e8f8, #fce8f0);
+                    "
+                  >
+                    🍼
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p2"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=2'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Baby Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=2">Newborn Silver Edition</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Silver metallic impression with premium wooden base
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(96)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹2,999</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p2',
+                          name: 'Newborn Silver Edition',
+                          price: 2999,
+                          emoji: '🍼',
+                          variant: 'Silver',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-3" data-category="couple">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #e8eef8, #f0e8f8);
+                    "
+                  >
+                    💑
+                  </div>
+                  <div class="product-card-badges">
+                    <span class="badge badge-gold">Popular</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p3"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=3'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Couple Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=3">Couple Hands Together</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Intertwined hands cast in gold, perfect anniversary gift
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(74)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹4,499</span>
+                      <span class="product-price-orig">₹5,500</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p3',
+                          name: 'Couple Hands Together',
+                          price: 4499,
+                          emoji: '💑',
+                          variant: 'Gold',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-4" data-category="family">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #e8f5f8, #e8f0f8);
+                    "
+                  >
+                    👨‍👩‍👧‍👦
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p4"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=4'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Family Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=4">Family Together Forever</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    All hands stacked — a symbol of family unity and love
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(52)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹5,999</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p4',
+                          name: 'Family Together Forever',
+                          price: 5999,
+                          emoji: '👨‍👩‍👧‍👦',
+                          variant: 'Gold',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-1" data-category="sibling">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #f0f8e8, #e8f0f8);
+                    "
+                  >
+                    👫
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p5"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=5'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Sibling Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=5">Sibling Bond Casting</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Two hands, one heart — siblings forever in bronze
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(41)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹3,799</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p5',
+                          name: 'Sibling Bond Casting',
+                          price: 3799,
+                          emoji: '👫',
+                          variant: 'Bronze',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-2" data-category="pet">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #fff5e6, #f0f5e8);
+                    "
+                  >
+                    🐾
+                  </div>
+                  <div class="product-card-badges">
+                    <span class="badge badge-teal">New</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p6"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=6'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Pet Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=6">Paw Print Keepsake</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Preserve your furry friend's precious paw print forever
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★☆
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(29)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹2,499</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p6',
+                          name: 'Paw Print Keepsake',
+                          price: 2499,
+                          emoji: '🐾',
+                          variant: 'Gold',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-3" data-category="wedding">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #fce8f3, #f8f0e8);
+                    "
+                  >
+                    💍
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p7"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=7'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Wedding Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=7">Wedding Day Memory</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Your wedding hands cast in premium gold — forever yours
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(18)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹6,999</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p7',
+                          name: 'Wedding Day Memory',
+                          price: 6999,
+                          emoji: '💍',
+                          variant: 'Gold',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-4" data-category="baby">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #fce8f0, #f8e8f8);
+                    "
+                  >
+                    🌸
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p8"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=8'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Baby Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=8">3D Baby Photo Frame Set</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Casting + photo combined in a beautiful framed display
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(63)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹4,999</span>
+                      <span class="product-price-orig">₹6,000</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p8',
+                          name: '3D Baby Photo Frame Set',
+                          price: 4999,
+                          emoji: '🌸',
+                          variant: 'Gold',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-1" data-category="family">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #e8f8f0, #e8f5f8);
+                    "
+                  >
+                    🫶
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p9"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=9'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Family Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=9">Heart of the Family</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Parent and child hands forming a heart — love captured
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(37)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹5,499</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p9',
+                          name: 'Heart of the Family',
+                          price: 5499,
+                          emoji: '🫶',
+                          variant: 'Gold',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-2" data-category="couple">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #f8eee8, #fce8f3);
+                    "
+                  >
+                    💏
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p10"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=10'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Couple Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=10">Anniversary Special Set</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Deluxe frame with couple casting + personalized engraving
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(22)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹7,499</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p10',
+                          name: 'Anniversary Special Set',
+                          price: 7499,
+                          emoji: '💏',
+                          variant: 'Gold',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-3" data-category="sibling">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #e8f0e8, #f0e8f8);
+                    "
+                  >
+                    🤝
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p11"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=11'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Sibling Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=11">Twin Impression Set</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Special twin casting with matching frames side by side
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(15)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹5,299</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p11',
+                          name: 'Twin Impression Set',
+                          price: 5299,
+                          emoji: '🤝',
+                          variant: 'Silver',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-card reveal delay-4" data-category="baby">
+                <div class="product-card-image">
+                  <div
+                    class="product-card-img"
+                    style="
+                      background: linear-gradient(135deg, #fff0e8, #fce8f3);
+                    "
+                  >
+                    🎀
+                  </div>
+                  <div class="product-card-badges">
+                    <span class="badge badge-primary">Gift Set</span>
+                  </div>
+                  <div class="product-card-actions">
+                    <button
+                      class="wishlist-btn"
+                      data-id="p12"
+                      title="Add to Wishlist"
+                    >
+                      🤍
+                    </button>
+                    <button
+                      class="btn btn-white btn-sm"
+                      onclick="window.location = 'product.html?id=12'"
+                    >
+                      👁️
+                    </button>
+                  </div>
+                </div>
+                <div class="product-card-body">
+                  <div class="product-card-cat">Baby Casting</div>
+                  <h3 class="product-card-name">
+                    <a href="product.html?id=12">Baby Shower Gift Box</a>
+                  </h3>
+                  <div class="product-card-desc">
+                    Complete baby casting kit presented in a premium gift box
+                  </div>
+                  <div class="stars" style="margin-bottom: var(--space-3)">
+                    ★★★★★
+                    <span
+                      style="
+                        font-size: 0.75rem;
+                        color: var(--color-text-light);
+                        margin-left: 4px;
+                      "
+                      >(45)</span
+                    >
+                  </div>
+                  <div class="product-card-footer">
+                    <div>
+                      <span class="product-price">₹3,999</span>
+                      <span class="product-price-orig">₹5,000</span>
+                    </div>
+                    <button
+                      class="product-atc"
+                      onclick="
+                        State.addToCart({
+                          id: 'p12',
+                          name: 'Baby Shower Gift Box',
+                          price: 3999,
+                          emoji: '🎀',
+                          variant: 'Gold',
+                        })
+                      "
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end product-grid -->
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <button class="pagination-btn active">1</button>
+              <button class="pagination-btn">2</button>
+              <button class="pagination-btn">3</button>
+              <button class="pagination-btn">›</button>
+            </div>
+          </div>
+          <!-- end shop-main -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a href="../index.html" class="footer-brand-logo">
+              <div class="footer-brand-icon">🖐️</div>
+              <div>
+                <div class="footer-brand-name">Freeze Ur Memories</div>
+                <div class="footer-brand-tagline">
+                  3D Casting & Impression Studio
+                </div>
+              </div>
+            </a>
+            <p class="footer-description">
+              Government-certified 3D casting studio in Coimbatore serving
+              families since 2018.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link">f</a>
+              <a href="#" class="footer-social-link">▶</a>
+              <a href="#" class="footer-social-link">📷</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="shop.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="product.html?cat=baby">Baby Casting</a></li>
+              <li><a href="product.html?cat=couple">Couple Casting</a></li>
+              <li><a href="product.html?cat=family">Family Casting</a></li>
+              <li><a href="product.html?cat=sibling">Sibling Casting</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact</h4>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">📞</div>
+                <a
+                  href="tel:09994914389"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >099949 14389</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">📍</div>
+                <span>Coimbatore, Tamil Nadu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            © 2025 Freeze Ur Memories. All rights reserved.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top">↑</button>
+    <div class="toast-container"></div>
+    <script src="../js/main.js"></script>
+    <script>
+      // Sidebar filter
+      document.querySelectorAll(".sidebar-filter-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          document
+            .querySelectorAll(".sidebar-filter-item")
+            .forEach((i) => i.classList.remove("active"));
+          item.classList.add("active");
+          const filter = item.dataset.filter;
+          document
+            .querySelectorAll(".product-card[data-category]")
+            .forEach((card) => {
+              card.style.display =
+                filter === "all" || card.dataset.category === filter
+                  ? ""
+                  : "none";
+            });
+        });
+      });
+
+      // Price range
+      const priceRange = document.getElementById("priceRange");
+      const priceVal = document.getElementById("priceVal");
+      priceRange?.addEventListener("input", () => {
+        priceVal.textContent =
+          "₹" + parseInt(priceRange.value).toLocaleString("en-IN");
+      });
+
+      // View toggle
+      document.querySelectorAll(".view-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          document
+            .querySelectorAll(".view-btn")
+            .forEach((b) => b.classList.remove("active"));
+          btn.classList.add("active");
+          const grid = document.getElementById("productGrid");
+          if (btn.dataset.view === "list") {
+            grid.classList.add("list-view");
+          } else {
+            grid.classList.remove("list-view");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
