@@ -1,406 +1,583 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us – Freeze Ur Memories</title>
-  <link rel="stylesheet" href="../css/variables.css">
-  <link rel="stylesheet" href="../css/base.css">
-  <link rel="stylesheet" href="../css/components.css">
-  <link rel="stylesheet" href="../css/pages.css">
-  <link rel="stylesheet" href="../css/contact.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us – Freeze Ur Memories</title>
 
-<div class="announcement-bar">
-  <span>🎁 Free Home Service Across Tamil Nadu!</span>
-  <span>•</span>
-  <span>📞 <a href="tel:09994914389">Call: 09994914389</a></span>
-  <button class="announcement-close">✕</button>
-</div>
-
-<nav class="navbar">
-  <div class="container navbar-inner">
-    <a href="../index.html" class="navbar-logo">
-      <div class="navbar-logo-icon">🖐️</div>
-      <div class="navbar-logo-text">
-        <span class="navbar-logo-name">Freeze Ur Memories</span>
-        <span class="navbar-logo-tagline">3D Casting & Impression Studio</span>
-      </div>
-    </a>
-    <nav class="navbar-nav">
-      <a href="../index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About Us</a>
-      <div class="nav-item">
-        <a href="shop.html" class="nav-link">Our Services ▾</a>
-        <div class="nav-dropdown">
-          <a href="product.html?cat=baby">👶 Baby Casting</a>
-          <a href="product.html?cat=sibling">👫 Sibling Casting</a>
-          <a href="product.html?cat=couple">💑 Couple Casting</a>
-          <a href="product.html?cat=family">👨‍👩‍👧‍👦 Family Casting</a>
-        </div>
-      </div>
-      <a href="shop.html" class="nav-link">Gallery</a>
-      <a href="contact.html" class="nav-link active">Contact</a>
-    </nav>
-    <div class="navbar-actions">
-      <button class="navbar-action-btn search-toggle">🔍</button>
-      <button class="navbar-action-btn cart-toggle-btn">🛒<span class="navbar-badge" style="display:none">0</span></button>
-      <a href="account.html" class="navbar-action-btn">👤</a>
-      <a href="contact.html" class="btn btn-primary btn-sm hide-mobile">Book Now</a>
-      <button class="hamburger"><span></span><span></span><span></span></button>
+    <link rel="stylesheet" href="./css/variables.css" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/components.css" />
+    <link rel="stylesheet" href="./css/pages.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <span>🎁 Free Home Service Across Tamil Nadu!</span>
+      <span>•</span>
+      <span>📞 <a href="tel:09994914389">Call: 09994914389</a></span>
+      <button class="announcement-close">✕</button>
     </div>
-  </div>
-</nav>
 
-<div class="overlay"></div>
-<div class="mobile-menu">
-  <div class="mobile-menu-header">
-    <span class="navbar-logo-name">Freeze Ur Memories</span>
-    <button class="mobile-menu-close">✕</button>
-  </div>
-  <nav class="mobile-nav">
-    <a href="../index.html">🏠 Home</a>
-    <a href="about.html">📖 About Us</a>
-    <a href="shop.html">🛍️ Services</a>
-    <a href="contact.html">📞 Contact</a>
-  </nav>
-  <div class="mobile-menu-footer">
-    <a href="contact.html" class="btn btn-primary">Book Now</a>
-  </div>
-</div>
-
-<div class="cart-drawer">
-  <div class="cart-drawer-header">
-    <h2 class="cart-drawer-title">Your Cart</h2>
-    <button class="cart-drawer-close modal-close">✕</button>
-  </div>
-  <div class="cart-drawer-body"></div>
-  <div class="cart-drawer-footer"></div>
-</div>
-
-<div class="search-overlay">
-  <div class="search-box">
-    <div class="search-input-wrapper">
-      <span style="font-size:1.25rem;padding:0 var(--space-2)">🔍</span>
-      <input type="text" class="search-input" placeholder="Search services...">
-      <button class="search-submit">Search</button>
-    </div>
-    <div class="search-suggestions" style="display:none"></div>
-  </div>
-</div>
-
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="page-hero-bg page-hero-bg-teal"></div>
-  <div class="page-hero-dots"></div>
-  <div class="container">
-    <div class="breadcrumb">
-      <a href="../index.html">Home</a>
-      <span class="breadcrumb-sep">›</span>
-      <span>Contact Us</span>
-    </div>
-    <div class="page-hero-label">📞 Get In Touch</div>
-    <h1 class="page-hero-title">Contact <span>Us</span></h1>
-    <p class="page-hero-desc">Have questions? Ready to book? We'd love to hear from you. Reach out and we'll get back to you quickly.</p>
-  </div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section class="section contact-section">
-  <div class="container">
-    <div class="contact-grid">
-
-      <!-- Contact Info -->
-      <div class="contact-info reveal-left">
-        <div class="contact-info-card">
-          <h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:var(--font-bold);color:var(--color-text-dark);margin-bottom:var(--space-6)">Get In Touch</h3>
-
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📞</div>
-            <div>
-              <div class="contact-info-label">Phone / WhatsApp</div>
-              <div class="contact-info-value"><a href="tel:09994914389">099949 14389</a></div>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">✉️</div>
-            <div>
-              <div class="contact-info-label">Email Address</div>
-              <div class="contact-info-value"><a href="mailto:freezeurmemories@gmail.com">freezeurmemories@gmail.com</a></div>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📍</div>
-            <div>
-              <div class="contact-info-label">Location</div>
-              <div class="contact-info-value">Coimbatore, Tamil Nadu, India</div>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">🕐</div>
-            <div>
-              <div class="contact-info-label">Working Hours</div>
-              <div class="contact-info-value">Mon – Sat: 9:00 AM – 7:00 PM</div>
-            </div>
-          </div>
-          <div class="contact-info-item">
-            <div class="contact-info-icon">🏠</div>
-            <div>
-              <div class="contact-info-label">Service Area</div>
-              <div class="contact-info-value">All of Tamil Nadu (Free Home Visits)</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Social -->
-        <div class="contact-social-card">
-          <h4 class="contact-social-title">Follow Us</h4>
-          <div class="contact-social-links">
-            <a href="#" class="contact-social-item facebook">
-              <span class="contact-social-icon">f</span>
-              <div>
-                <div class="contact-social-name">Facebook</div>
-                <div class="contact-social-handle">@FreezeUrMemories</div>
-              </div>
-            </a>
-            <a href="#" class="contact-social-item youtube">
-              <span class="contact-social-icon">▶</span>
-              <div>
-                <div class="contact-social-name">YouTube</div>
-                <div class="contact-social-handle">Freeze Ur Memories</div>
-              </div>
-            </a>
-            <a href="#" class="contact-social-item instagram">
-              <span class="contact-social-icon">📷</span>
-              <div>
-                <div class="contact-social-name">Instagram</div>
-                <div class="contact-social-handle">@freezeurmemories</div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Contact Form -->
-      <div class="contact-form-wrap reveal-right">
-        <div class="contact-form-card">
-          <h3 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:var(--font-bold);color:var(--color-text-dark);margin-bottom:var(--space-2)">Send Us a Message</h3>
-          <p style="font-size:var(--text-sm);color:var(--color-text-light);margin-bottom:var(--space-6)">Fill out the form below and we'll respond within 24 hours.</p>
-
-          <form data-action="contact">
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label">Your Name *</label>
-                <input type="text" class="form-control" placeholder="e.g. Priya Krishnan" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Phone Number *</label>
-                <input type="tel" class="form-control" placeholder="e.g. 9876543210" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Email Address *</label>
-              <input type="email" class="form-control" placeholder="your@email.com" required>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Service Interested In</label>
-              <select class="form-control">
-                <option value="">Select a service...</option>
-                <option>Baby Casting</option>
-                <option>Sibling Casting</option>
-                <option>Couple Casting</option>
-                <option>Family Casting</option>
-                <option>Wedding Casting</option>
-                <option>Pet Casting</option>
-                <option>Birthday / Anniversary Gift</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Your City / Location</label>
-              <input type="text" class="form-control" placeholder="e.g. Coimbatore, Chennai...">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Message *</label>
-              <textarea class="form-control" rows="5" placeholder="Tell us about your requirements, preferred date/time, any special requests..." required></textarea>
-            </div>
-            <div class="form-group contact-consent">
-              <label style="display:flex;align-items:flex-start;gap:var(--space-3);cursor:pointer;font-size:var(--text-sm);color:var(--color-text-light)">
-                <input type="checkbox" style="margin-top:3px;accent-color:var(--color-primary)" required>
-                <span>I agree to be contacted via phone/WhatsApp/email regarding my inquiry. I understand my data will be kept confidential.</span>
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">
-              📨 Send Message
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOKING CTA CARDS -->
-<section class="section booking-options-section bg-primary-pale bg-dots">
-  <div class="container">
-    <div class="text-center reveal">
-      <div class="section-label">Quick Contact</div>
-      <h2 class="section-title">Prefer to <span style="color:var(--color-primary)">Reach Us Directly?</span></h2>
-      <div class="divider"></div>
-    </div>
-    <div class="booking-options-grid">
-      <div class="booking-option-card reveal delay-1">
-        <div class="booking-icon">📞</div>
-        <h3>Call Us</h3>
-        <p>Speak directly with our team for immediate assistance and booking.</p>
-        <a href="tel:09994914389" class="btn btn-primary">Call Now</a>
-      </div>
-      <div class="booking-option-card reveal delay-2">
-        <div class="booking-icon">💬</div>
-        <h3>WhatsApp</h3>
-        <p>Message us on WhatsApp for quick replies and to share your ideas.</p>
-        <a href="https://wa.me/919994914389" target="_blank" class="btn btn-primary">Chat on WhatsApp</a>
-      </div>
-      <div class="booking-option-card reveal delay-3">
-        <div class="booking-icon">📷</div>
-        <h3>Instagram</h3>
-        <p>Follow us on Instagram to see our latest work and DM us directly.</p>
-        <a href="#" class="btn btn-primary">Visit Instagram</a>
-      </div>
-      <div class="booking-option-card reveal delay-4">
-        <div class="booking-icon">▶</div>
-        <h3>YouTube</h3>
-        <p>Watch our process videos to see how we create your perfect casting.</p>
-        <a href="#" target="_blank" class="btn btn-primary">Watch Videos</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MAP PLACEHOLDER -->
-<section class="map-section">
-  <div class="map-placeholder">
-    <div class="map-overlay-card">
-      <div class="map-icon">📍</div>
-      <h3>Visit Our Studio</h3>
-      <p>Freeze Ur Memories Studio<br>Coimbatore, Tamil Nadu, India</p>
-      <a href="https://maps.google.com" target="_blank" class="btn btn-primary">Open in Google Maps</a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ MINI -->
-<section class="section contact-faq-section">
-  <div class="container" style="max-width:760px">
-    <div class="text-center reveal">
-      <div class="section-label">Quick Answers</div>
-      <h2 class="section-title">Common <span style="color:var(--color-primary)">Questions</span></h2>
-      <div class="divider"></div>
-    </div>
-    <div class="reveal">
-      <div class="faq-item">
-        <div class="faq-question">Do you offer home visits? <span class="faq-icon">+</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes! We offer free home visits across all of Tamil Nadu. We come to you with all the necessary equipment to ensure a comfortable and convenient experience, especially for families with newborns.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Are the materials safe for babies? <span class="faq-icon">+</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. All materials we use are 100% non-toxic, baby-safe, and tested for use with newborns. We are a government-certified studio that adheres to the highest safety standards.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How long does the process take? <span class="faq-icon">+</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">The impression-taking itself takes just 2–5 minutes. The full casting and finishing process takes 7–14 days, after which we deliver the finished product to your door.</div></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Do you deliver outside Tamil Nadu? <span class="faq-icon">+</span></div>
-        <div class="faq-answer"><div class="faq-answer-inner">Currently, our home visit service is available across Tamil Nadu. For other states, we can arrange a studio visit or discuss options — please contact us directly to find the best solution for you.</div></div>
-      </div>
-    </div>
-    <div class="text-center mt-8 reveal">
-      <a href="faq.html" class="btn btn-outline btn-lg">View All FAQs →</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-col">
-        <a href="../index.html" class="footer-brand-logo">
-          <div class="footer-brand-icon">🖐️</div>
-          <div>
-            <div class="footer-brand-name">Freeze Ur Memories</div>
-            <div class="footer-brand-tagline">3D Casting & Impression Studio</div>
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="navbar-logo">
+          <div class="navbar-logo-icon">🖐️</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Freeze Ur Memories</span>
+            <span class="navbar-logo-tagline"
+              >3D Casting & Impression Studio</span
+            >
           </div>
         </a>
-        <p class="footer-description">Government-certified 3D casting studio in Coimbatore serving families since 2018.</p>
-        <div class="footer-social">
-          <a href="#" class="footer-social-link">f</a>
-          <a href="#" class="footer-social-link">▶</a>
-          <a href="#" class="footer-social-link">📷</a>
+        <nav class="navbar-nav">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <div class="nav-item">
+            <a href="shop.html" class="nav-link">Our Services ▾</a>
+            <div class="nav-dropdown">
+              <a href="product.html?cat=baby">👶 Baby Casting</a>
+              <a href="product.html?cat=sibling">👫 Sibling Casting</a>
+              <a href="product.html?cat=couple">💑 Couple Casting</a>
+              <a href="product.html?cat=family">👨‍👩‍👧‍👦 Family Casting</a>
+            </div>
+          </div>
+          <a href="shop.html" class="nav-link">Gallery</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+        <div class="navbar-actions">
+          <button class="navbar-action-btn search-toggle">🔍</button>
+          <button class="navbar-action-btn cart-toggle-btn">
+            🛒<span class="navbar-badge" style="display: none">0</span>
+          </button>
+          <a href="account.html" class="navbar-action-btn">👤</a>
+          <a href="contact.html" class="btn btn-primary btn-sm hide-mobile"
+            >Book Now</a
+          >
+          <button class="hamburger">
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
-      <div class="footer-col">
-        <h4 class="footer-col-title">Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="shop.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4 class="footer-col-title">Services</h4>
-        <ul class="footer-links">
-          <li><a href="product.html?cat=baby">Baby Casting</a></li>
-          <li><a href="product.html?cat=couple">Couple Casting</a></li>
-          <li><a href="product.html?cat=family">Family Casting</a></li>
-          <li><a href="product.html?cat=sibling">Sibling Casting</a></li>
-          <li><a href="product.html?cat=pet">Pet Casting</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4 class="footer-col-title">Contact</h4>
-        <div class="footer-contact-list">
-          <div class="footer-contact-item">
-            <div class="footer-contact-icon">📞</div>
-            <a href="tel:09994914389" style="color:rgba(255,255,255,0.8)">099949 14389</a>
-          </div>
-          <div class="footer-contact-item">
-            <div class="footer-contact-icon">✉️</div>
-            <a href="mailto:freezeurmemories@gmail.com" style="color:rgba(255,255,255,0.8);font-size:0.8rem">freezeurmemories@gmail.com</a>
-          </div>
-          <div class="footer-contact-item">
-            <div class="footer-contact-icon">📍</div>
-            <span>Coimbatore, Tamil Nadu</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-copyright">© 2025 Freeze Ur Memories. All rights reserved.</div>
-      <div class="footer-bottom-links">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms & Conditions</a>
-      </div>
-    </div>
-  </div>
-</footer>
+    </nav>
 
-<button class="scroll-top">↑</button>
-<div class="toast-container"></div>
-<script src="../js/main.js"></script>
-<script>
-  document.querySelectorAll('.faq-question').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-</script>
-</body>
+    <div class="overlay"></div>
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <span class="navbar-logo-name">Freeze Ur Memories</span>
+        <button class="mobile-menu-close">✕</button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="../index.html">🏠 Home</a>
+        <a href="about.html">📖 About Us</a>
+        <a href="shop.html">🛍️ Services</a>
+        <a href="contact.html">📞 Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h2 class="cart-drawer-title">Your Cart</h2>
+        <button class="cart-drawer-close modal-close">✕</button>
+      </div>
+      <div class="cart-drawer-body"></div>
+      <div class="cart-drawer-footer"></div>
+    </div>
+
+    <div class="search-overlay">
+      <div class="search-box">
+        <div class="search-input-wrapper">
+          <span style="font-size: 1.25rem; padding: 0 var(--space-2)">🔍</span>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search services..."
+          />
+          <button class="search-submit">Search</button>
+        </div>
+        <div class="search-suggestions" style="display: none"></div>
+      </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-bg page-hero-bg-teal"></div>
+      <div class="page-hero-dots"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <span>Contact Us</span>
+        </div>
+        <div class="page-hero-label">📞 Get In Touch</div>
+        <h1 class="page-hero-title">Contact <span>Us</span></h1>
+        <p class="page-hero-desc">
+          Have questions? Ready to book? We'd love to hear from you. Reach out
+          and we'll get back to you quickly.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="contact-info reveal-left">
+            <div class="contact-info-card">
+              <h3
+                style="
+                  font-family: var(--font-display);
+                  font-size: var(--text-xl);
+                  font-weight: var(--font-bold);
+                  color: var(--color-text-dark);
+                  margin-bottom: var(--space-6);
+                "
+              >
+                Get In Touch
+              </h3>
+
+              <div class="contact-info-item">
+                <div class="contact-info-icon">📞</div>
+                <div>
+                  <div class="contact-info-label">Phone / WhatsApp</div>
+                  <div class="contact-info-value">
+                    <a href="tel:09994914389">099949 14389</a>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">✉️</div>
+                <div>
+                  <div class="contact-info-label">Email Address</div>
+                  <div class="contact-info-value">
+                    <a href="mailto:freezeurmemories@gmail.com"
+                      >freezeurmemories@gmail.com</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">📍</div>
+                <div>
+                  <div class="contact-info-label">Location</div>
+                  <div class="contact-info-value">
+                    Coimbatore, Tamil Nadu, India
+                  </div>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">🕐</div>
+                <div>
+                  <div class="contact-info-label">Working Hours</div>
+                  <div class="contact-info-value">
+                    Mon – Sat: 9:00 AM – 7:00 PM
+                  </div>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon">🏠</div>
+                <div>
+                  <div class="contact-info-label">Service Area</div>
+                  <div class="contact-info-value">
+                    All of Tamil Nadu (Free Home Visits)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social -->
+            <div class="contact-social-card">
+              <h4 class="contact-social-title">Follow Us</h4>
+              <div class="contact-social-links">
+                <a href="#" class="contact-social-item facebook">
+                  <span class="contact-social-icon">f</span>
+                  <div>
+                    <div class="contact-social-name">Facebook</div>
+                    <div class="contact-social-handle">@FreezeUrMemories</div>
+                  </div>
+                </a>
+                <a href="#" class="contact-social-item youtube">
+                  <span class="contact-social-icon">▶</span>
+                  <div>
+                    <div class="contact-social-name">YouTube</div>
+                    <div class="contact-social-handle">Freeze Ur Memories</div>
+                  </div>
+                </a>
+                <a href="#" class="contact-social-item instagram">
+                  <span class="contact-social-icon">📷</span>
+                  <div>
+                    <div class="contact-social-name">Instagram</div>
+                    <div class="contact-social-handle">@freezeurmemories</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrap reveal-right">
+            <div class="contact-form-card">
+              <h3
+                style="
+                  font-family: var(--font-display);
+                  font-size: var(--text-xl);
+                  font-weight: var(--font-bold);
+                  color: var(--color-text-dark);
+                  margin-bottom: var(--space-2);
+                "
+              >
+                Send Us a Message
+              </h3>
+              <p
+                style="
+                  font-size: var(--text-sm);
+                  color: var(--color-text-light);
+                  margin-bottom: var(--space-6);
+                "
+              >
+                Fill out the form below and we'll respond within 24 hours.
+              </p>
+
+              <form data-action="contact">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Your Name *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="e.g. Priya Krishnan"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Phone Number *</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      placeholder="e.g. 9876543210"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email Address *</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Service Interested In</label>
+                  <select class="form-control">
+                    <option value="">Select a service...</option>
+                    <option>Baby Casting</option>
+                    <option>Sibling Casting</option>
+                    <option>Couple Casting</option>
+                    <option>Family Casting</option>
+                    <option>Wedding Casting</option>
+                    <option>Pet Casting</option>
+                    <option>Birthday / Anniversary Gift</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Your City / Location</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="e.g. Coimbatore, Chennai..."
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Message *</label>
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="Tell us about your requirements, preferred date/time, any special requests..."
+                    required
+                  ></textarea>
+                </div>
+                <div class="form-group contact-consent">
+                  <label
+                    style="
+                      display: flex;
+                      align-items: flex-start;
+                      gap: var(--space-3);
+                      cursor: pointer;
+                      font-size: var(--text-sm);
+                      color: var(--color-text-light);
+                    "
+                  >
+                    <input
+                      type="checkbox"
+                      style="
+                        margin-top: 3px;
+                        accent-color: var(--color-primary);
+                      "
+                      required
+                    />
+                    <span
+                      >I agree to be contacted via phone/WhatsApp/email
+                      regarding my inquiry. I understand my data will be kept
+                      confidential.</span
+                    >
+                  </label>
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-lg"
+                  style="width: 100%; justify-content: center"
+                >
+                  📨 Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING CTA CARDS -->
+    <section class="section booking-options-section bg-primary-pale bg-dots">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="section-label">Quick Contact</div>
+          <h2 class="section-title">
+            Prefer to
+            <span style="color: var(--color-primary)">Reach Us Directly?</span>
+          </h2>
+          <div class="divider"></div>
+        </div>
+        <div class="booking-options-grid">
+          <div class="booking-option-card reveal delay-1">
+            <div class="booking-icon">📞</div>
+            <h3>Call Us</h3>
+            <p>
+              Speak directly with our team for immediate assistance and booking.
+            </p>
+            <a href="tel:09994914389" class="btn btn-primary">Call Now</a>
+          </div>
+          <div class="booking-option-card reveal delay-2">
+            <div class="booking-icon">💬</div>
+            <h3>WhatsApp</h3>
+            <p>
+              Message us on WhatsApp for quick replies and to share your ideas.
+            </p>
+            <a
+              href="https://wa.me/919994914389"
+              target="_blank"
+              class="btn btn-primary"
+              >Chat on WhatsApp</a
+            >
+          </div>
+          <div class="booking-option-card reveal delay-3">
+            <div class="booking-icon">📷</div>
+            <h3>Instagram</h3>
+            <p>
+              Follow us on Instagram to see our latest work and DM us directly.
+            </p>
+            <a href="#" class="btn btn-primary">Visit Instagram</a>
+          </div>
+          <div class="booking-option-card reveal delay-4">
+            <div class="booking-icon">▶</div>
+            <h3>YouTube</h3>
+            <p>
+              Watch our process videos to see how we create your perfect
+              casting.
+            </p>
+            <a href="#" target="_blank" class="btn btn-primary">Watch Videos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP PLACEHOLDER -->
+    <section class="map-section">
+      <div class="map-placeholder">
+        <div class="map-overlay-card">
+          <div class="map-icon">📍</div>
+          <h3>Visit Our Studio</h3>
+          <p>Freeze Ur Memories Studio<br />Coimbatore, Tamil Nadu, India</p>
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            class="btn btn-primary"
+            >Open in Google Maps</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ MINI -->
+    <section class="section contact-faq-section">
+      <div class="container" style="max-width: 760px">
+        <div class="text-center reveal">
+          <div class="section-label">Quick Answers</div>
+          <h2 class="section-title">
+            Common <span style="color: var(--color-primary)">Questions</span>
+          </h2>
+          <div class="divider"></div>
+        </div>
+        <div class="reveal">
+          <div class="faq-item">
+            <div class="faq-question">
+              Do you offer home visits? <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes! We offer free home visits across all of Tamil Nadu. We come
+                to you with all the necessary equipment to ensure a comfortable
+                and convenient experience, especially for families with
+                newborns.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Are the materials safe for babies? <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Absolutely. All materials we use are 100% non-toxic, baby-safe,
+                and tested for use with newborns. We are a government-certified
+                studio that adheres to the highest safety standards.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              How long does the process take? <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                The impression-taking itself takes just 2–5 minutes. The full
+                casting and finishing process takes 7–14 days, after which we
+                deliver the finished product to your door.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Do you deliver outside Tamil Nadu? <span class="faq-icon">+</span>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Currently, our home visit service is available across Tamil
+                Nadu. For other states, we can arrange a studio visit or discuss
+                options — please contact us directly to find the best solution
+                for you.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-8 reveal">
+          <a href="faq.html" class="btn btn-outline btn-lg">View All FAQs →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a href="../index.html" class="footer-brand-logo">
+              <div class="footer-brand-icon">🖐️</div>
+              <div>
+                <div class="footer-brand-name">Freeze Ur Memories</div>
+                <div class="footer-brand-tagline">
+                  3D Casting & Impression Studio
+                </div>
+              </div>
+            </a>
+            <p class="footer-description">
+              Government-certified 3D casting studio in Coimbatore serving
+              families since 2018.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link">f</a>
+              <a href="#" class="footer-social-link">▶</a>
+              <a href="#" class="footer-social-link">📷</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="shop.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="product.html?cat=baby">Baby Casting</a></li>
+              <li><a href="product.html?cat=couple">Couple Casting</a></li>
+              <li><a href="product.html?cat=family">Family Casting</a></li>
+              <li><a href="product.html?cat=sibling">Sibling Casting</a></li>
+              <li><a href="product.html?cat=pet">Pet Casting</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact</h4>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">📞</div>
+                <a
+                  href="tel:09994914389"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >099949 14389</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">✉️</div>
+                <a
+                  href="mailto:freezeurmemories@gmail.com"
+                  style="color: rgba(255, 255, 255, 0.8); font-size: 0.8rem"
+                  >freezeurmemories@gmail.com</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">📍</div>
+                <span>Coimbatore, Tamil Nadu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            © 2025 Freeze Ur Memories. All rights reserved.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top">↑</button>
+    <div class="toast-container"></div>
+    <script src="../js/main.js"></script>
+    <script>
+      document.querySelectorAll(".faq-question").forEach((q) => {
+        q.addEventListener("click", () => {
+          const item = q.closest(".faq-item");
+          const isOpen = item.classList.contains("open");
+          document
+            .querySelectorAll(".faq-item")
+            .forEach((i) => i.classList.remove("open"));
+          if (!isOpen) item.classList.add("open");
+        });
+      });
+    </script>
+  </body>
 </html>
