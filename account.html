@@ -1,0 +1,978 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account – Freeze Ur Memories</title>
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <link rel="stylesheet" href="../css/account.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <span>🎁 Free Home Service Across Tamil Nadu!</span>
+      <span>•</span>
+      <span>📞 <a href="tel:09994914389">Call: 09994914389</a></span>
+      <button class="announcement-close">✕</button>
+    </div>
+
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="navbar-logo">
+          <div class="navbar-logo-icon">🖐️</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Freeze Ur Memories</span>
+            <span class="navbar-logo-tagline"
+              >3D Casting & Impression Studio</span
+            >
+          </div>
+        </a>
+        <nav class="navbar-nav">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="products.html" class="nav-link">Services</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="navbar-actions">
+          <button class="navbar-action-btn search-toggle">🔍</button>
+          <button class="navbar-action-btn cart-toggle-btn">
+            🛒<span class="navbar-badge" style="display: none">0</span>
+          </button>
+          <button class="hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <span class="navbar-logo-name">Freeze Ur Memories</span
+        ><button class="mobile-menu-close">✕</button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="../index.html">🏠 Home</a
+        ><a href="products.html">🛍️ Services</a
+        ><a href="contact.html">📞 Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h2 class="cart-drawer-title">Your Cart</h2>
+        <button class="cart-drawer-close modal-close">✕</button>
+      </div>
+      <div class="cart-drawer-body"></div>
+      <div class="cart-drawer-footer"></div>
+    </div>
+
+    <div class="search-overlay">
+      <div class="search-box">
+        <div class="search-input-wrapper">
+          <span style="font-size: 1.25rem; padding: 0 var(--space-2)">🔍</span>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search services..."
+          />
+          <button class="search-submit">Search</button>
+        </div>
+        <div class="search-suggestions" style="display: none"></div>
+      </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section
+      class="page-hero"
+      style="padding-block: var(--space-10) var(--space-8)"
+    >
+      <div class="page-hero-bg page-hero-bg-pink"></div>
+      <div class="page-hero-dots"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span
+          ><span>My Account</span>
+        </div>
+        <h1 class="page-hero-title">My <span>Account</span></h1>
+      </div>
+    </section>
+
+    <!-- AUTH PANEL (shown when logged out) -->
+    <section class="section auth-section" id="authSection">
+      <div class="container" style="max-width: 900px">
+        <div class="auth-grid">
+          <!-- LOGIN -->
+          <div class="auth-card">
+            <div class="auth-card-header">
+              <div class="auth-icon">👤</div>
+              <h2>Sign In</h2>
+              <p>Welcome back! Sign in to your account.</p>
+            </div>
+            <form data-action="login">
+              <div class="form-group">
+                <label class="form-label">Email Address *</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Password *</label>
+                <div class="password-wrap">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="loginPw"
+                    placeholder="Enter password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="password-toggle"
+                    onclick="togglePw('loginPw', this)"
+                  >
+                    👁️
+                  </button>
+                </div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: flex-end;
+                  margin-bottom: var(--space-5);
+                "
+              >
+                <a
+                  href="forgot-password.html"
+                  style="font-size: var(--text-sm); color: var(--color-primary)"
+                  >Forgot password?</a
+                >
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+                style="width: 100%; justify-content: center"
+              >
+                Sign In →
+              </button>
+            </form>
+            <div class="auth-divider"><span>or</span></div>
+            <button
+              class="btn btn-outline"
+              style="width: 100%; justify-content: center; gap: var(--space-3)"
+              onclick="showToast('Google sign-in coming soon!', 'info')"
+            >
+              🌐 Continue with Google
+            </button>
+          </div>
+
+          <!-- REGISTER -->
+          <div class="auth-card">
+            <div class="auth-card-header">
+              <div class="auth-icon">✨</div>
+              <h2>Create Account</h2>
+              <p>Join our family and start preserving memories.</p>
+            </div>
+            <form data-action="register">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">First Name *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Priya"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Krishnan"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email *</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone *</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  placeholder="9876543210"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Password *</label>
+                <div class="password-wrap">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="regPw"
+                    placeholder="Create password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    class="password-toggle"
+                    onclick="togglePw('regPw', this)"
+                  >
+                    👁️
+                  </button>
+                </div>
+              </div>
+              <div class="form-group">
+                <label
+                  style="
+                    display: flex;
+                    align-items: flex-start;
+                    gap: var(--space-3);
+                    cursor: pointer;
+                    font-size: var(--text-sm);
+                    color: var(--color-text-light);
+                  "
+                >
+                  <input
+                    type="checkbox"
+                    required
+                    style="margin-top: 3px; accent-color: var(--color-primary)"
+                  />
+                  <span
+                    >I agree to the
+                    <a href="terms.html" style="color: var(--color-primary)"
+                      >Terms</a
+                    >
+                    and
+                    <a href="privacy.html" style="color: var(--color-primary)"
+                      >Privacy Policy</a
+                    ></span
+                  >
+                </label>
+              </div>
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+                style="width: 100%; justify-content: center"
+              >
+                Create Account →
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD (shown when logged in — toggle via JS) -->
+    <section
+      class="section dashboard-section"
+      id="dashboardSection"
+      style="display: none"
+    >
+      <div class="container">
+        <div class="account-layout">
+          <!-- Sidebar Nav -->
+          <aside class="account-nav">
+            <div class="account-nav-card">
+              <div class="account-nav-header">
+                <div class="account-avatar">P</div>
+                <div class="account-name">Priya Krishnan</div>
+                <div class="account-email">priya@email.com</div>
+              </div>
+              <div class="account-nav-links">
+                <a
+                  href="#"
+                  class="account-nav-link active"
+                  data-panel="overview"
+                  >📊 Dashboard</a
+                >
+                <a href="#" class="account-nav-link" data-panel="orders"
+                  >📦 My Orders</a
+                >
+                <a href="#" class="account-nav-link" data-panel="wishlist"
+                  >🤍 Wishlist</a
+                >
+                <a href="#" class="account-nav-link" data-panel="bookings"
+                  >📅 Bookings</a
+                >
+                <a href="#" class="account-nav-link" data-panel="addresses"
+                  >📍 Addresses</a
+                >
+                <a href="#" class="account-nav-link" data-panel="profile"
+                  >👤 Profile</a
+                >
+                <a href="#" class="account-nav-link" data-panel="password"
+                  >🔒 Change Password</a
+                >
+                <a
+                  href="#"
+                  class="account-nav-link"
+                  style="color: #e53e3e"
+                  onclick="logout()"
+                  >🚪 Logout</a
+                >
+              </div>
+            </div>
+          </aside>
+
+          <!-- Main Content -->
+          <div class="account-content">
+            <!-- Overview -->
+            <div class="account-panel active" id="panel-overview">
+              <h2 class="account-panel-title">👋 Welcome back, Priya!</h2>
+              <div class="dashboard-stats">
+                <div class="dash-stat-card">
+                  <div class="dash-stat-icon">📦</div>
+                  <div class="dash-stat-num">3</div>
+                  <div class="dash-stat-label">Total Orders</div>
+                </div>
+                <div class="dash-stat-card">
+                  <div class="dash-stat-icon">🤍</div>
+                  <div class="dash-stat-num" id="wishlistCount">0</div>
+                  <div class="dash-stat-label">Wishlist Items</div>
+                </div>
+                <div class="dash-stat-card">
+                  <div class="dash-stat-icon">📅</div>
+                  <div class="dash-stat-num">1</div>
+                  <div class="dash-stat-label">Upcoming Session</div>
+                </div>
+                <div class="dash-stat-card">
+                  <div class="dash-stat-icon">⭐</div>
+                  <div class="dash-stat-num">2</div>
+                  <div class="dash-stat-label">Reviews Given</div>
+                </div>
+              </div>
+
+              <!-- Recent Orders -->
+              <div class="account-section-card">
+                <div class="account-section-header">
+                  <h3>Recent Orders</h3>
+                  <a
+                    href="#"
+                    class="btn btn-outline btn-sm"
+                    onclick="switchPanel('orders')"
+                    >View All</a
+                  >
+                </div>
+                <div style="overflow-x: auto">
+                  <table class="order-table">
+                    <thead>
+                      <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>#FUM-2025-0471</strong></td>
+                        <td>12 Mar 2025</td>
+                        <td>Baby Hand & Feet Gold Frame</td>
+                        <td>
+                          <span class="status-badge status-delivered"
+                            >✅ Delivered</span
+                          >
+                        </td>
+                        <td>
+                          <strong style="color: var(--color-primary)"
+                            >₹3,499</strong
+                          >
+                        </td>
+                        <td>
+                          <a href="product.html" class="btn btn-outline btn-sm"
+                            >View</a
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>#FUM-2025-0389</strong></td>
+                        <td>28 Feb 2025</td>
+                        <td>Couple Hands Together</td>
+                        <td>
+                          <span class="status-badge status-processing"
+                            >⏳ Processing</span
+                          >
+                        </td>
+                        <td>
+                          <strong style="color: var(--color-primary)"
+                            >₹4,499</strong
+                          >
+                        </td>
+                        <td>
+                          <a href="product.html" class="btn btn-outline btn-sm"
+                            >Track</a
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>#FUM-2025-0214</strong></td>
+                        <td>5 Jan 2025</td>
+                        <td>Family Together Forever</td>
+                        <td>
+                          <span class="status-badge status-delivered"
+                            >✅ Delivered</span
+                          >
+                        </td>
+                        <td>
+                          <strong style="color: var(--color-primary)"
+                            >₹5,999</strong
+                          >
+                        </td>
+                        <td>
+                          <a href="product.html" class="btn btn-outline btn-sm"
+                            >Reorder</a
+                          >
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Upcoming session -->
+              <div class="account-section-card session-card">
+                <div class="session-icon">📅</div>
+                <div class="session-info">
+                  <h4>Upcoming Home Visit Session</h4>
+                  <p>Baby Casting — Home Visit</p>
+                  <div class="session-details">
+                    <span>📅 15 April 2025</span>
+                    <span>🕐 10:00 AM – 12:00 PM</span>
+                    <span>📍 Coimbatore</span>
+                  </div>
+                </div>
+                <a href="contact.html" class="btn btn-primary btn-sm"
+                  >Reschedule</a
+                >
+              </div>
+            </div>
+
+            <!-- Orders Panel -->
+            <div class="account-panel" id="panel-orders">
+              <h2 class="account-panel-title">📦 My Orders</h2>
+              <div class="account-section-card">
+                <div style="overflow-x: auto">
+                  <table class="order-table">
+                    <thead>
+                      <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Items</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>#FUM-2025-0471</strong></td>
+                        <td>12 Mar 2025</td>
+                        <td>Baby Hand & Feet Gold Frame × 1</td>
+                        <td>
+                          <span class="status-badge status-delivered"
+                            >✅ Delivered</span
+                          >
+                        </td>
+                        <td>
+                          <strong style="color: var(--color-primary)"
+                            >₹3,499</strong
+                          >
+                        </td>
+                        <td>
+                          <div style="display: flex; gap: var(--space-2)">
+                            <a
+                              href="product.html"
+                              class="btn btn-outline btn-sm"
+                              >View</a
+                            ><button
+                              class="btn btn-primary btn-sm"
+                              onclick="
+                                State.addToCart({
+                                  id: 'p1',
+                                  name: 'Baby Hand & Feet Gold Frame',
+                                  price: 3499,
+                                  emoji: '👶',
+                                  variant: 'Gold',
+                                })
+                              "
+                            >
+                              Reorder
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>#FUM-2025-0389</strong></td>
+                        <td>28 Feb 2025</td>
+                        <td>Couple Hands Together × 1</td>
+                        <td>
+                          <span class="status-badge status-processing"
+                            >⏳ Processing</span
+                          >
+                        </td>
+                        <td>
+                          <strong style="color: var(--color-primary)"
+                            >₹4,499</strong
+                          >
+                        </td>
+                        <td>
+                          <a href="#" class="btn btn-outline btn-sm">Track</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>#FUM-2025-0214</strong></td>
+                        <td>5 Jan 2025</td>
+                        <td>Family Together Forever × 1</td>
+                        <td>
+                          <span class="status-badge status-delivered"
+                            >✅ Delivered</span
+                          >
+                        </td>
+                        <td>
+                          <strong style="color: var(--color-primary)"
+                            >₹5,999</strong
+                          >
+                        </td>
+                        <td>
+                          <div style="display: flex; gap: var(--space-2)">
+                            <a
+                              href="product.html"
+                              class="btn btn-outline btn-sm"
+                              >View</a
+                            ><button
+                              class="btn btn-primary btn-sm"
+                              onclick="
+                                State.addToCart({
+                                  id: 'p4',
+                                  name: 'Family Together Forever',
+                                  price: 5999,
+                                  emoji: '👨‍👩‍👧‍👦',
+                                  variant: 'Gold',
+                                })
+                              "
+                            >
+                              Reorder
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wishlist Panel -->
+            <div class="account-panel" id="panel-wishlist">
+              <h2 class="account-panel-title">🤍 My Wishlist</h2>
+              <div id="wishlistGrid" class="wishlist-grid">
+                <div
+                  style="
+                    text-align: center;
+                    padding: var(--space-12);
+                    color: var(--color-text-light);
+                  "
+                >
+                  <div style="font-size: 3rem; margin-bottom: var(--space-4)">
+                    🤍
+                  </div>
+                  <h3 style="margin-bottom: var(--space-3)">
+                    Your wishlist is empty
+                  </h3>
+                  <p style="margin-bottom: var(--space-5)">
+                    Save your favourite castings here!
+                  </p>
+                  <a href="products.html" class="btn btn-primary"
+                    >Browse Services</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Bookings Panel -->
+            <div class="account-panel" id="panel-bookings">
+              <h2 class="account-panel-title">📅 My Bookings</h2>
+              <div class="account-section-card session-card">
+                <div class="session-icon">📅</div>
+                <div class="session-info">
+                  <h4>Upcoming — Baby Casting</h4>
+                  <div class="session-details">
+                    <span>📅 15 April 2025</span><span>🕐 10:00 AM</span
+                    ><span>📍 Coimbatore</span>
+                  </div>
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--space-2);
+                  "
+                >
+                  <a href="contact.html" class="btn btn-primary btn-sm"
+                    >Reschedule</a
+                  >
+                  <button
+                    class="btn btn-outline btn-sm"
+                    onclick="showToast('Session cancelled', 'info')"
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </div>
+              <div
+                class="account-section-card"
+                style="margin-top: var(--space-5)"
+              >
+                <div class="account-section-header"><h3>Past Sessions</h3></div>
+                <table class="order-table">
+                  <thead>
+                    <tr>
+                      <th>Service</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Baby Casting</td>
+                      <td>12 Mar 2025</td>
+                      <td>
+                        <span class="status-badge status-delivered"
+                          >✅ Completed</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Couple Casting</td>
+                      <td>5 Jan 2025</td>
+                      <td>
+                        <span class="status-badge status-delivered"
+                          >✅ Completed</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Addresses -->
+            <div class="account-panel" id="panel-addresses">
+              <h2 class="account-panel-title">📍 Saved Addresses</h2>
+              <div class="addresses-grid">
+                <div class="address-card default">
+                  <div class="address-badge">Default</div>
+                  <h4>Home</h4>
+                  <p>
+                    Priya Krishnan<br />42, Rose Garden Street<br />Saibaba
+                    Colony, Coimbatore<br />Tamil Nadu – 641011
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      gap: var(--space-2);
+                      margin-top: var(--space-4);
+                    "
+                  >
+                    <button class="btn btn-outline btn-sm">Edit</button>
+                    <button
+                      class="btn btn-sm"
+                      style="
+                        background: #fee8e8;
+                        color: #e53e3e;
+                        border-radius: var(--radius-full);
+                      "
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="address-card add-new"
+                  onclick="showToast('Address form coming soon!', 'info')"
+                >
+                  <div style="font-size: 2.5rem; margin-bottom: var(--space-3)">
+                    ➕
+                  </div>
+                  <h4>Add New Address</h4>
+                  <p>Add a delivery or session address</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Profile -->
+            <div class="account-panel" id="panel-profile">
+              <h2 class="account-panel-title">👤 My Profile</h2>
+              <div class="account-section-card">
+                <form>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">First Name</label
+                      ><input type="text" class="form-control" value="Priya" />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Last Name</label
+                      ><input
+                        type="text"
+                        class="form-control"
+                        value="Krishnan"
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Email</label
+                    ><input
+                      type="email"
+                      class="form-control"
+                      value="priya@email.com"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Phone</label
+                    ><input
+                      type="tel"
+                      class="form-control"
+                      value="9876543210"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">City</label
+                    ><input
+                      type="text"
+                      class="form-control"
+                      value="Coimbatore"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label"
+                      >Birthday (for special offers)</label
+                    ><input type="date" class="form-control" />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    onclick="
+                      event.preventDefault();
+                      showToast('Profile updated!', 'success');
+                    "
+                  >
+                    Save Changes
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="account-panel" id="panel-password">
+              <h2 class="account-panel-title">🔒 Change Password</h2>
+              <div class="account-section-card" style="max-width: 480px">
+                <form>
+                  <div class="form-group">
+                    <label class="form-label">Current Password</label
+                    ><input
+                      type="password"
+                      class="form-control"
+                      placeholder="Current password"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">New Password</label
+                    ><input
+                      type="password"
+                      class="form-control"
+                      placeholder="New password"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Confirm New Password</label
+                    ><input
+                      type="password"
+                      class="form-control"
+                      placeholder="Confirm new password"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    onclick="
+                      event.preventDefault();
+                      showToast('Password updated!', 'success');
+                    "
+                  >
+                    Update Password
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- end account-content -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a href="../index.html" class="footer-brand-logo"
+              ><div class="footer-brand-icon">🖐️</div>
+              <div>
+                <div class="footer-brand-name">Freeze Ur Memories</div>
+                <div class="footer-brand-tagline">
+                  3D Casting & Impression Studio
+                </div>
+              </div></a
+            >
+            <p class="footer-description">
+              Government-certified 3D casting studio in Coimbatore since 2018.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="products.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="product.html?cat=baby">Baby Casting</a></li>
+              <li><a href="product.html?cat=couple">Couple Casting</a></li>
+              <li><a href="product.html?cat=family">Family Casting</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact</h4>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">📞</div>
+                <a
+                  href="tel:09994914389"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >099949 14389</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            © 2025 Freeze Ur Memories. All rights reserved.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="privacy.html">Privacy Policy</a
+            ><a href="terms.html">Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top">↑</button>
+    <div class="toast-container"></div>
+    <script src="../js/main.js"></script>
+    <script>
+      // Simulate logged-in state (toggle for demo)
+      let isLoggedIn = localStorage.getItem("fm_logged_in") === "1";
+
+      function showDashboard() {
+        document.getElementById("authSection").style.display = "none";
+        document.getElementById("dashboardSection").style.display = "block";
+        document.getElementById("wishlistCount").textContent =
+          State.wishlist.length;
+      }
+
+      function showAuth() {
+        document.getElementById("authSection").style.display = "block";
+        document.getElementById("dashboardSection").style.display = "none";
+      }
+
+      function logout() {
+        localStorage.removeItem("fm_logged_in");
+        isLoggedIn = false;
+        showAuth();
+        showToast("Logged out successfully", "info");
+      }
+
+      if (isLoggedIn) showDashboard();
+
+      // Login/register form handling
+      document.querySelectorAll('form[data-action="login"]').forEach((f) => {
+        f.addEventListener("submit", (e) => {
+          e.preventDefault();
+          localStorage.setItem("fm_logged_in", "1");
+          isLoggedIn = true;
+          showDashboard();
+          showToast("Welcome back, Priya! 💕", "success");
+        });
+      });
+
+      document.querySelectorAll('form[data-action="register"]').forEach((f) => {
+        f.addEventListener("submit", (e) => {
+          e.preventDefault();
+          localStorage.setItem("fm_logged_in", "1");
+          isLoggedIn = true;
+          showDashboard();
+          showToast(
+            "Account created! Welcome to Freeze Ur Memories 🎉",
+            "success",
+          );
+        });
+      });
+
+      // Panel switching
+      function switchPanel(id) {
+        document
+          .querySelectorAll(".account-panel")
+          .forEach((p) => p.classList.remove("active"));
+        document
+          .querySelectorAll(".account-nav-link")
+          .forEach((l) => l.classList.remove("active"));
+        document.getElementById("panel-" + id)?.classList.add("active");
+        document.querySelector(`[data-panel="${id}"]`)?.classList.add("active");
+      }
+
+      document
+        .querySelectorAll(".account-nav-link[data-panel]")
+        .forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            switchPanel(link.dataset.panel);
+          });
+        });
+
+      // Password toggle
+      function togglePw(id, btn) {
+        const input = document.getElementById(id);
+        if (input.type === "password") {
+          input.type = "text";
+          btn.textContent = "🙈";
+        } else {
+          input.type = "password";
+          btn.textContent = "👁️";
+        }
+      }
+    </script>
+  </body>
+</html>

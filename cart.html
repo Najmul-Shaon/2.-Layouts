@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart – Freeze Ur Memories</title>
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <span
+        >🎁 Free Home Service Across Tamil Nadu! Use code
+        <strong>FREEZE10</strong> for 10% off</span
+      >
+      <button class="announcement-close">✕</button>
+    </div>
+
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="navbar-logo">
+          <div class="navbar-logo-icon">🖐️</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Freeze Ur Memories</span>
+            <span class="navbar-logo-tagline"
+              >3D Casting & Impression Studio</span
+            >
+          </div>
+        </a>
+        <nav class="navbar-nav">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="products.html" class="nav-link">Services</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="navbar-actions">
+          <button class="navbar-action-btn search-toggle">🔍</button>
+          <button class="navbar-action-btn cart-toggle-btn">
+            🛒<span class="navbar-badge" style="display: none">0</span>
+          </button>
+          <a href="account.html" class="navbar-action-btn">👤</a>
+          <button class="hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <span class="navbar-logo-name">Freeze Ur Memories</span
+        ><button class="mobile-menu-close">✕</button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="../index.html">🏠 Home</a
+        ><a href="products.html">🛍️ Services</a
+        ><a href="contact.html">📞 Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h2 class="cart-drawer-title">Your Cart</h2>
+        <button class="cart-drawer-close modal-close">✕</button>
+      </div>
+      <div class="cart-drawer-body"></div>
+      <div class="cart-drawer-footer"></div>
+    </div>
+
+    <div class="search-overlay">
+      <div class="search-box">
+        <div class="search-input-wrapper">
+          <span style="font-size: 1.25rem; padding: 0 var(--space-2)">🔍</span>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search services..."
+          />
+          <button class="search-submit">Search</button>
+        </div>
+        <div class="search-suggestions" style="display: none"></div>
+      </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section
+      class="page-hero"
+      style="padding-block: var(--space-10) var(--space-8)"
+    >
+      <div class="page-hero-bg page-hero-bg-pink"></div>
+      <div class="page-hero-dots"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span
+          ><span>Cart</span>
+        </div>
+        <h1 class="page-hero-title">Your <span>Cart</span></h1>
+      </div>
+    </section>
+
+    <!-- CART SECTION -->
+    <section class="section cart-section">
+      <div class="container">
+        <!-- Progress -->
+        <div class="cart-progress">
+          <div class="progress-step active">
+            <div class="progress-dot">🛒</div>
+            <span>Cart</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <div class="progress-dot">📋</div>
+            <span>Checkout</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <div class="progress-dot">✅</div>
+            <span>Confirmation</span>
+          </div>
+        </div>
+
+        <div class="cart-layout" id="cartLayout">
+          <!-- Cart Table -->
+          <div class="cart-main">
+            <div class="cart-table-wrap">
+              <table class="cart-table">
+                <thead>
+                  <tr>
+                    <th style="width: 50%">Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="cartTableBody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Coupon + Continue -->
+            <div class="cart-actions">
+              <form class="coupon-form">
+                <div class="coupon-input-wrap">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Coupon code (e.g. FREEZE10)"
+                    style="
+                      border-radius: var(--radius-full) 0 0 var(--radius-full);
+                      border-right: none;
+                    "
+                  />
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style="
+                      border-radius: 0 var(--radius-full) var(--radius-full) 0;
+                    "
+                  >
+                    Apply
+                  </button>
+                </div>
+                <div
+                  class="coupon-result"
+                  style="
+                    font-size: var(--text-sm);
+                    color: #22863a;
+                    margin-top: var(--space-2);
+                    font-weight: 600;
+                  "
+                ></div>
+              </form>
+              <a href="products.html" class="btn btn-outline"
+                >← Continue Shopping</a
+              >
+            </div>
+          </div>
+
+          <!-- Order Summary -->
+          <aside class="cart-summary">
+            <div class="cart-summary-card">
+              <h3 class="cart-summary-title">Order Summary</h3>
+
+              <div class="summary-rows" id="summaryRows">
+                <!-- Rendered by JS -->
+              </div>
+
+              <div class="shipping-calculator">
+                <h4 class="shipping-calc-title">🚚 Shipping Calculator</h4>
+                <select
+                  class="form-control"
+                  style="margin-bottom: var(--space-3)"
+                >
+                  <option>Tamil Nadu</option>
+                  <option>Karnataka</option>
+                  <option>Kerala</option>
+                  <option>Andhra Pradesh</option>
+                  <option>Other State</option>
+                </select>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter PIN Code"
+                  style="margin-bottom: var(--space-3)"
+                />
+                <button
+                  class="btn btn-outline"
+                  style="width: 100%; justify-content: center"
+                  onclick="
+                    showToast(
+                      'Free shipping applies to your area! 🎉',
+                      'success',
+                    )
+                  "
+                >
+                  Calculate Shipping
+                </button>
+                <div
+                  style="
+                    margin-top: var(--space-3);
+                    font-size: var(--text-sm);
+                    color: #22863a;
+                    font-weight: 600;
+                  "
+                >
+                  ✅ Free home service & delivery in Tamil Nadu
+                </div>
+              </div>
+
+              <div class="cart-total-block" id="cartTotalBlock">
+                <!-- Rendered by JS -->
+              </div>
+
+              <a
+                href="checkout.html"
+                class="btn btn-primary btn-lg"
+                style="
+                  width: 100%;
+                  justify-content: center;
+                  margin-bottom: var(--space-3);
+                "
+                id="checkoutBtn"
+              >
+                🔒 Proceed to Checkout
+              </a>
+              <a
+                href="products.html"
+                class="btn btn-outline"
+                style="
+                  width: 100%;
+                  justify-content: center;
+                  font-size: var(--text-sm);
+                "
+                >Continue Shopping</a
+              >
+
+              <!-- Trust -->
+              <div class="cart-trust">
+                <div class="cart-trust-item">
+                  <span>🔒</span> Secure Checkout
+                </div>
+                <div class="cart-trust-item">
+                  <span>🌿</span> Baby-Safe Materials
+                </div>
+                <div class="cart-trust-item">
+                  <span>♾️</span> Lifetime Guarantee
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Empty Cart State -->
+        <div class="empty-cart-state" id="emptyCart" style="display: none">
+          <div class="empty-cart-icon">🛒</div>
+          <h2>Your cart is empty</h2>
+          <p>
+            Looks like you haven't added any casting services yet. Explore our
+            beautiful collection!
+          </p>
+          <a
+            href="products.html"
+            class="btn btn-primary btn-xl"
+            style="margin-top: var(--space-6)"
+            >🛍️ Browse Services</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- UPSELL -->
+    <section
+      class="section upsell-section bg-primary-pale bg-dots"
+      id="upsellSection"
+    >
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="section-label">You May Also Like</div>
+          <h2 class="section-title">
+            Complete Your
+            <span style="color: var(--color-primary)">Collection</span>
+          </h2>
+          <div class="divider"></div>
+        </div>
+        <div class="upsell-grid">
+          <div class="product-card reveal delay-1">
+            <div class="product-card-image">
+              <div
+                class="product-card-img"
+                style="background: linear-gradient(135deg, #f8e8f8, #fce8f0)"
+              >
+                🍼
+              </div>
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-cat">Baby Casting</div>
+              <h3 class="product-card-name">
+                <a href="product.html?id=2">Newborn Silver Edition</a>
+              </h3>
+              <div class="product-card-footer">
+                <span class="product-price">₹2,999</span
+                ><button
+                  class="product-atc"
+                  onclick="
+                    State.addToCart({
+                      id: 'p2',
+                      name: 'Newborn Silver Edition',
+                      price: 2999,
+                      emoji: '🍼',
+                      variant: 'Silver',
+                    })
+                  "
+                >
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card reveal delay-2">
+            <div class="product-card-image">
+              <div
+                class="product-card-img"
+                style="background: linear-gradient(135deg, #fce8f0, #f8f0e8)"
+              >
+                🌸
+              </div>
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-cat">Baby Casting</div>
+              <h3 class="product-card-name">
+                <a href="product.html?id=8">3D Baby Photo Frame Set</a>
+              </h3>
+              <div class="product-card-footer">
+                <span class="product-price">₹4,999</span
+                ><button
+                  class="product-atc"
+                  onclick="
+                    State.addToCart({
+                      id: 'p8',
+                      name: '3D Baby Photo Frame Set',
+                      price: 4999,
+                      emoji: '🌸',
+                      variant: 'Gold',
+                    })
+                  "
+                >
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="product-card reveal delay-3">
+            <div class="product-card-image">
+              <div
+                class="product-card-img"
+                style="background: linear-gradient(135deg, #e8f5f8, #e8f0f8)"
+              >
+                👨‍👩‍👧‍👦
+              </div>
+            </div>
+            <div class="product-card-body">
+              <div class="product-card-cat">Family Casting</div>
+              <h3 class="product-card-name">
+                <a href="product.html?id=4">Family Together Forever</a>
+              </h3>
+              <div class="product-card-footer">
+                <span class="product-price">₹5,999</span
+                ><button
+                  class="product-atc"
+                  onclick="
+                    State.addToCart({
+                      id: 'p4',
+                      name: 'Family Together Forever',
+                      price: 5999,
+                      emoji: '👨‍👩‍👧‍👦',
+                      variant: 'Gold',
+                    })
+                  "
+                >
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a href="../index.html" class="footer-brand-logo"
+              ><div class="footer-brand-icon">🖐️</div>
+              <div>
+                <div class="footer-brand-name">Freeze Ur Memories</div>
+                <div class="footer-brand-tagline">
+                  3D Casting & Impression Studio
+                </div>
+              </div></a
+            >
+            <p class="footer-description">
+              Government-certified 3D casting studio in Coimbatore since 2018.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link">f</a
+              ><a href="#" class="footer-social-link">▶</a
+              ><a href="#" class="footer-social-link">📷</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="products.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="product.html?cat=baby">Baby Casting</a></li>
+              <li><a href="product.html?cat=couple">Couple Casting</a></li>
+              <li><a href="product.html?cat=family">Family Casting</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact</h4>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">📞</div>
+                <a
+                  href="tel:09994914389"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >099949 14389</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">📍</div>
+                <span>Coimbatore, Tamil Nadu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            © 2025 Freeze Ur Memories. All rights reserved.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="privacy.html">Privacy Policy</a
+            ><a href="terms.html">Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top">↑</button>
+    <div class="toast-container"></div>
+    <script src="../js/main.js"></script>
+    <script>
+      function renderCartPage() {
+        const tableBody = document.getElementById("cartTableBody");
+        const summaryRows = document.getElementById("summaryRows");
+        const totalBlock = document.getElementById("cartTotalBlock");
+        const emptyCart = document.getElementById("emptyCart");
+        const cartLayout = document.getElementById("cartLayout");
+        const upsell = document.getElementById("upsellSection");
+
+        if (State.cart.length === 0) {
+          if (cartLayout) cartLayout.style.display = "none";
+          if (emptyCart) emptyCart.style.display = "block";
+          return;
+        }
+
+        if (cartLayout) cartLayout.style.display = "grid";
+        if (emptyCart) emptyCart.style.display = "none";
+
+        if (tableBody) {
+          tableBody.innerHTML = State.cart
+            .map(
+              (item) => `
+      <tr>
+        <td>
+          <div class="cart-product-cell">
+            <div class="cart-product-img">${item.emoji || "🎁"}</div>
+            <div>
+              <div class="cart-product-name">${item.name}</div>
+              ${item.variant ? `<div class="cart-product-variant">${item.variant}</div>` : ""}
+            </div>
+          </div>
+        </td>
+        <td><span class="cart-cell-price">₹${item.price.toLocaleString("en-IN")}</span></td>
+        <td>
+          <div class="qty-selector">
+            <button class="qty-btn" onclick="State.updateQty('${item.id}','${item.variant}',${item.qty - 1});renderCartPage()">−</button>
+            <input class="qty-input" type="number" value="${item.qty}" min="1" onchange="State.updateQty('${item.id}','${item.variant}',parseInt(this.value));renderCartPage()">
+            <button class="qty-btn" onclick="State.updateQty('${item.id}','${item.variant}',${item.qty + 1});renderCartPage()">+</button>
+          </div>
+        </td>
+        <td><span class="cart-cell-price" style="color:var(--color-primary)">₹${(item.price * item.qty).toLocaleString("en-IN")}</span></td>
+        <td><button class="cart-remove-btn" onclick="State.removeFromCart('${item.id}','${item.variant}');renderCartPage()" title="Remove">🗑️</button></td>
+      </tr>
+    `,
+            )
+            .join("");
+        }
+
+        const subtotal = State.getCartTotal();
+        const discount = Math.round(subtotal * 0.1); // example 10% if coupon
+        const shipping = 0;
+        const total = subtotal;
+
+        if (summaryRows) {
+          summaryRows.innerHTML = `
+      <div class="summary-row"><span>Subtotal (${State.getCartCount()} items)</span><span>₹${subtotal.toLocaleString("en-IN")}</span></div>
+      <div class="summary-row"><span>Shipping</span><span style="color:#22863a;font-weight:600">FREE</span></div>
+      <div class="summary-row"><span>Home Visit</span><span style="color:#22863a;font-weight:600">FREE</span></div>
+    `;
+        }
+
+        if (totalBlock) {
+          totalBlock.innerHTML = `
+      <div class="summary-total-row">
+        <span>Total</span>
+        <span>₹${total.toLocaleString("en-IN")}</span>
+      </div>
+      <div style="font-size:var(--text-xs);color:var(--color-text-light);text-align:center;margin-top:var(--space-2)">Inclusive of all taxes</div>
+    `;
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", renderCartPage);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmed! – Freeze Ur Memories</title>
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <style>
+      .thankyou-hero {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #fce8f3, #f8ecf8, #fef0f6);
+        text-align: center;
+        padding: var(--space-16) var(--space-6);
+        position: relative;
+        overflow: hidden;
+      }
+      .thankyou-confetti {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .confetti-piece {
+        position: absolute;
+        font-size: 1.5rem;
+        animation: confettiFall linear infinite;
+      }
+      @keyframes confettiFall {
+        0% {
+          transform: translateY(-50px) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(110vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
+      .thankyou-card {
+        position: relative;
+        z-index: 1;
+        background: white;
+        border-radius: var(--radius-2xl);
+        padding: var(--space-12) var(--space-10);
+        box-shadow: var(--shadow-xl);
+        max-width: 600px;
+        width: 100%;
+        border: 2px solid rgba(232, 24, 122, 0.1);
+      }
+      .success-icon {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #22863a, #34d058);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        margin-inline: auto;
+        margin-bottom: var(--space-6);
+        box-shadow: 0 8px 24px rgba(34, 134, 58, 0.3);
+        animation: bounceIn 0.6s var(--transition-bounce);
+      }
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0);
+        }
+        60% {
+          transform: scale(1.15);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .thankyou-title {
+        font-family: var(--font-display);
+        font-size: var(--text-3xl);
+        font-weight: var(--font-bold);
+        color: var(--color-text-dark);
+        margin-bottom: var(--space-3);
+      }
+      .thankyou-subtitle {
+        font-size: var(--font-accent);
+        font-family: var(--font-accent);
+        font-size: var(--text-xl);
+        color: var(--color-primary);
+        margin-bottom: var(--space-5);
+      }
+      .order-number {
+        background: var(--color-primary-pale);
+        border: 1px dashed var(--color-primary);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4) var(--space-6);
+        margin-bottom: var(--space-6);
+      }
+      .order-number-label {
+        font-size: var(--text-xs);
+        color: var(--color-text-light);
+        font-weight: var(--font-semibold);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+      }
+      .order-number-val {
+        font-size: var(--text-xl);
+        font-weight: var(--font-extrabold);
+        color: var(--color-primary);
+      }
+      .next-steps {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+        margin: var(--space-6) 0;
+        text-align: left;
+      }
+      .next-step {
+        background: var(--color-light);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4);
+      }
+      .next-step-icon {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-2);
+      }
+      .next-step h4 {
+        font-size: var(--text-sm);
+        font-weight: var(--font-bold);
+        color: var(--color-text-dark);
+        margin-bottom: var(--space-1);
+      }
+      .next-step p {
+        font-size: var(--text-xs);
+        color: var(--color-text-light);
+        line-height: 1.5;
+      }
+      @media (max-width: 640px) {
+        .next-steps {
+          grid-template-columns: 1fr;
+        }
+        .thankyou-card {
+          padding: var(--space-8) var(--space-6);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="navbar-logo">
+          <div class="navbar-logo-icon">🖐️</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Freeze Ur Memories</span>
+            <span class="navbar-logo-tagline"
+              >3D Casting & Impression Studio</span
+            >
+          </div>
+        </a>
+        <div class="navbar-actions">
+          <a href="../index.html" class="btn btn-outline btn-sm"
+            >🏠 Back to Home</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="thankyou-hero">
+      <div class="thankyou-confetti" id="confetti"></div>
+      <div class="thankyou-card reveal">
+        <div class="success-icon">✅</div>
+        <h1 class="thankyou-title">Order Confirmed!</h1>
+        <p class="thankyou-subtitle font-accent">
+          Your precious memory is on its way 💕
+        </p>
+        <p
+          style="
+            color: var(--color-text-light);
+            font-size: var(--text-base);
+            line-height: var(--leading-relaxed);
+            margin-bottom: var(--space-6);
+          "
+        >
+          Thank you for trusting Freeze Ur Memories. We've received your order
+          and our team will contact you within 24 hours to schedule your home
+          visit session.
+        </p>
+
+        <div class="order-number">
+          <div class="order-number-label">Order Number</div>
+          <div class="order-number-val" id="orderNum">#FUM-2025-0000</div>
+        </div>
+
+        <div class="next-steps">
+          <div class="next-step">
+            <div class="next-step-icon">📞</div>
+            <h4>We'll Call You</h4>
+            <p>
+              Our team will call within 24 hours to confirm your session time.
+            </p>
+          </div>
+          <div class="next-step">
+            <div class="next-step-icon">🏠</div>
+            <h4>Home Visit</h4>
+            <p>
+              Our certified artist will visit your home on your chosen date.
+            </p>
+          </div>
+          <div class="next-step">
+            <div class="next-step-icon">🎨</div>
+            <h4>Crafting Begins</h4>
+            <p>We'll carefully craft your casting over 10–14 working days.</p>
+          </div>
+          <div class="next-step">
+            <div class="next-step-icon">📦</div>
+            <h4>Delivered to You</h4>
+            <p>Your precious memory will be delivered safely to your door.</p>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: var(--space-3)">
+          <a
+            href="../index.html"
+            class="btn btn-primary btn-lg"
+            style="justify-content: center"
+            >🏠 Back to Home</a
+          >
+          <a
+            href="products.html"
+            class="btn btn-outline"
+            style="justify-content: center"
+            >🛍️ Continue Shopping</a
+          >
+          <a
+            href="account.html"
+            class="btn btn-outline"
+            style="justify-content: center"
+            >📋 View My Orders</a
+          >
+        </div>
+
+        <div
+          style="
+            margin-top: var(--space-6);
+            padding-top: var(--space-5);
+            border-top: 1px solid var(--color-border);
+          "
+        >
+          <p
+            style="
+              font-size: var(--text-sm);
+              color: var(--color-text-light);
+              margin-bottom: var(--space-3);
+            "
+          >
+            Need help? Contact us:
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: var(--space-4);
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a href="tel:09994914389" class="btn btn-sm btn-outline"
+              >📞 Call Us</a
+            >
+            <a href="https://wa.me/919994914389" class="btn btn-sm btn-outline"
+              >💬 WhatsApp</a
+            >
+            <a
+              href="mailto:freezeurmemories@gmail.com"
+              class="btn btn-sm btn-outline"
+              >✉️ Email</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="../js/main.js"></script>
+    <script>
+      // Generate order number
+      const orderNum =
+        "#FUM-" +
+        new Date().getFullYear() +
+        "-" +
+        String(Math.floor(1000 + Math.random() * 9000));
+      document.getElementById("orderNum").textContent = orderNum;
+
+      // Clear cart
+      State.cart = [];
+      State.saveCart();
+      updateCartUI();
+
+      // Confetti
+      const container = document.getElementById("confetti");
+      const emojis = ["🎉", "✨", "💕", "🌸", "⭐", "🎀", "💛", "🎊"];
+      for (let i = 0; i < 25; i++) {
+        const el = document.createElement("div");
+        el.className = "confetti-piece";
+        el.textContent = emojis[i % emojis.length];
+        el.style.cssText = `left:${Math.random() * 100}%;animation-delay:${Math.random() * 3}s;animation-duration:${3 + Math.random() * 4}s;font-size:${1 + Math.random() * 1.5}rem;`;
+        container.appendChild(el);
+      }
+
+      setTimeout(
+        () =>
+          showToast(
+            "🎉 Order placed successfully! We'll contact you soon.",
+            "success",
+            5000,
+          ),
+        500,
+      );
+    </script>
+  </body>
+</html>

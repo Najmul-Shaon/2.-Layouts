@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog – Freeze Ur Memories</title>
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <link rel="stylesheet" href="../css/blog.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <span>🎁 Free Home Service Across Tamil Nadu!</span>
+      <button class="announcement-close">✕</button>
+    </div>
+
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="navbar-logo">
+          <div class="navbar-logo-icon">🖐️</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Freeze Ur Memories</span>
+            <span class="navbar-logo-tagline"
+              >3D Casting & Impression Studio</span
+            >
+          </div>
+        </a>
+        <nav class="navbar-nav">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="products.html" class="nav-link">Services</a>
+          <a href="blog.html" class="nav-link active">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="navbar-actions">
+          <button class="navbar-action-btn search-toggle">🔍</button>
+          <button class="navbar-action-btn cart-toggle-btn">
+            🛒<span class="navbar-badge" style="display: none">0</span>
+          </button>
+          <a href="account.html" class="navbar-action-btn">👤</a>
+          <a href="contact.html" class="btn btn-primary btn-sm hide-mobile"
+            >Book Now</a
+          >
+          <button class="hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <span class="navbar-logo-name">Freeze Ur Memories</span
+        ><button class="mobile-menu-close">✕</button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="../index.html">🏠 Home</a
+        ><a href="products.html">🛍️ Services</a><a href="blog.html">📝 Blog</a
+        ><a href="contact.html">📞 Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h2 class="cart-drawer-title">Your Cart</h2>
+        <button class="cart-drawer-close modal-close">✕</button>
+      </div>
+      <div class="cart-drawer-body"></div>
+      <div class="cart-drawer-footer"></div>
+    </div>
+
+    <div class="search-overlay">
+      <div class="search-box">
+        <div class="search-input-wrapper">
+          <span style="font-size: 1.25rem; padding: 0 var(--space-2)">🔍</span>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search articles..."
+          />
+          <button class="search-submit">Search</button>
+        </div>
+        <div class="search-suggestions" style="display: none"></div>
+      </div>
+    </div>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero-bg page-hero-bg-gold"></div>
+      <div class="page-hero-dots"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span
+          ><span>Blog</span>
+        </div>
+        <div class="page-hero-label">📝 Tips & Stories</div>
+        <h1 class="page-hero-title">Our <span>Blog</span></h1>
+        <p class="page-hero-desc">
+          Tips on preserving memories, casting guides, family stories, and
+          inspiration from our studio.
+        </p>
+      </div>
+    </section>
+
+    <!-- BLOG SECTION -->
+    <section class="section blog-section">
+      <div class="container">
+        <div class="blog-layout">
+          <!-- Blog Grid -->
+          <div class="blog-main">
+            <!-- Filter tabs -->
+            <div class="blog-filter-tabs">
+              <button class="filter-btn active" data-filter="all">
+                All Posts
+              </button>
+              <button class="filter-btn" data-filter="tips">
+                Casting Tips
+              </button>
+              <button class="filter-btn" data-filter="baby">Baby</button>
+              <button class="filter-btn" data-filter="family">Family</button>
+              <button class="filter-btn" data-filter="stories">Stories</button>
+            </div>
+
+            <!-- Featured post -->
+            <div class="blog-featured reveal">
+              <div class="blog-featured-img">
+                <div class="blog-featured-placeholder">👶🌟</div>
+              </div>
+              <div class="blog-featured-content">
+                <div class="blog-card-meta">
+                  <span class="blog-card-cat">Baby Casting</span
+                  ><span>📅 March 15, 2025</span><span>⏱️ 5 min read</span>
+                </div>
+                <h2 class="blog-featured-title">
+                  <a href="blog-single.html"
+                    >10 Reasons to Get a Baby Casting in the First Year</a
+                  >
+                </h2>
+                <p class="blog-featured-excerpt">
+                  Your baby's first year is filled with incredible milestones.
+                  From tiny toes that can fit in your palm to hands that can
+                  barely grasp your finger — every detail is precious and
+                  fleeting. Here's why a 3D casting is the perfect way to
+                  preserve these moments forever...
+                </p>
+                <div class="blog-featured-footer">
+                  <div
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: var(--space-2);
+                    "
+                  >
+                    <div
+                      style="
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        background: var(--color-primary);
+                        color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 700;
+                        font-size: 0.85rem;
+                      "
+                    >
+                      K
+                    </div>
+                    <span style="font-size: var(--text-sm); font-weight: 600"
+                      >Kavitha Raj</span
+                    >
+                  </div>
+                  <a href="blog-single.html" class="btn btn-primary btn-sm"
+                    >Read More →</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+              <div class="blog-card reveal delay-1" data-category="tips">
+                <div
+                  class="blog-card-img"
+                  style="background: linear-gradient(135deg, #fce8f3, #fff5e6)"
+                >
+                  🎨
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-cat">Casting Tips</span
+                    ><span>📅 Feb 28, 2025</span>
+                  </div>
+                  <h3 class="blog-card-title">
+                    <a href="blog-single.html"
+                      >Choosing the Perfect Finish: Gold vs Silver vs Bronze</a
+                    >
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    Each metallic finish tells a different story. Learn how to
+                    choose the perfect finish for your casting based on your
+                    home décor and personal style...
+                  </p>
+                  <div class="blog-card-footer">
+                    <div class="blog-card-author">
+                      <div class="blog-card-author-avatar">A</div>
+                      <span>Arun Kumar</span>
+                    </div>
+                    <a href="blog-single.html" class="blog-read-more">Read →</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card reveal delay-2" data-category="family">
+                <div
+                  class="blog-card-img"
+                  style="background: linear-gradient(135deg, #e8f5f8, #e8f0f8)"
+                >
+                  👨‍👩‍👧‍👦
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-cat">Family</span
+                    ><span>📅 Feb 10, 2025</span>
+                  </div>
+                  <h3 class="blog-card-title">
+                    <a href="blog-single.html"
+                      >Why Family Castings Make the Best Anniversary Gifts</a
+                    >
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    Forget flowers and chocolates. A family casting is a
+                    timeless anniversary gift that will be treasured for
+                    generations. Here's how to make it extra special...
+                  </p>
+                  <div class="blog-card-footer">
+                    <div class="blog-card-author">
+                      <div class="blog-card-author-avatar">K</div>
+                      <span>Kavitha Raj</span>
+                    </div>
+                    <a href="blog-single.html" class="blog-read-more">Read →</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card reveal delay-3" data-category="baby">
+                <div
+                  class="blog-card-img"
+                  style="background: linear-gradient(135deg, #f0e8f8, #fce8f0)"
+                >
+                  🍼
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-cat">Baby</span
+                    ><span>📅 Jan 22, 2025</span>
+                  </div>
+                  <h3 class="blog-card-title">
+                    <a href="blog-single.html"
+                      >Best Age to Get a Baby Casting — Newborn to Toddler</a
+                    >
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    Every age is perfect for a casting, but each stage captures
+                    something unique. Find out which moments you shouldn't miss
+                    when it comes to baby castings...
+                  </p>
+                  <div class="blog-card-footer">
+                    <div class="blog-card-author">
+                      <div class="blog-card-author-avatar">P</div>
+                      <span>Preethi Mohan</span>
+                    </div>
+                    <a href="blog-single.html" class="blog-read-more">Read →</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card reveal delay-4" data-category="stories">
+                <div
+                  class="blog-card-img"
+                  style="background: linear-gradient(135deg, #fff5e6, #fce8f3)"
+                >
+                  💕
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-cat">Customer Story</span
+                    ><span>📅 Jan 5, 2025</span>
+                  </div>
+                  <h3 class="blog-card-title">
+                    <a href="blog-single.html"
+                      >"It Made My Mother-in-Law Cry" — A Chennai Family's
+                      Story</a
+                    >
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    Ananya from Chennai shares how a surprise family casting
+                    became the most memorable gift she'd ever given — and how it
+                    brought three generations together...
+                  </p>
+                  <div class="blog-card-footer">
+                    <div class="blog-card-author">
+                      <div
+                        class="blog-card-author-avatar"
+                        style="background: var(--color-teal)"
+                      >
+                        A
+                      </div>
+                      <span>Ananya (Customer)</span>
+                    </div>
+                    <a href="blog-single.html" class="blog-read-more">Read →</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card reveal delay-1" data-category="tips">
+                <div
+                  class="blog-card-img"
+                  style="background: linear-gradient(135deg, #e8f0e8, #f0f5e8)"
+                >
+                  🐾
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-cat">Casting Tips</span
+                    ><span>📅 Dec 18, 2024</span>
+                  </div>
+                  <h3 class="blog-card-title">
+                    <a href="blog-single.html"
+                      >Pet Casting Guide: Everything You Need to Know</a
+                    >
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    Your furry family member deserves to be remembered too!
+                    Here's our complete guide to getting a pet paw print casting
+                    done safely and beautifully...
+                  </p>
+                  <div class="blog-card-footer">
+                    <div class="blog-card-author">
+                      <div
+                        class="blog-card-author-avatar"
+                        style="background: var(--color-gold)"
+                      >
+                        A
+                      </div>
+                      <span>Arun Kumar</span>
+                    </div>
+                    <a href="blog-single.html" class="blog-read-more">Read →</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog-card reveal delay-2" data-category="family">
+                <div
+                  class="blog-card-img"
+                  style="background: linear-gradient(135deg, #f8eee8, #fce8f3)"
+                >
+                  💍
+                </div>
+                <div class="blog-card-body">
+                  <div class="blog-card-meta">
+                    <span class="blog-card-cat">Wedding</span
+                    ><span>📅 Dec 1, 2024</span>
+                  </div>
+                  <h3 class="blog-card-title">
+                    <a href="blog-single.html"
+                      >Wedding Casting: A Unique Alternative to Traditional
+                      Gifts</a
+                    >
+                  </h3>
+                  <p class="blog-card-excerpt">
+                    Couples across Tamil Nadu are choosing 3D wedding castings
+                    over traditional gifts. Discover why it's becoming the most
+                    cherished wedding keepsake...
+                  </p>
+                  <div class="blog-card-footer">
+                    <div class="blog-card-author">
+                      <div class="blog-card-author-avatar">K</div>
+                      <span>Kavitha Raj</span>
+                    </div>
+                    <a href="blog-single.html" class="blog-read-more">Read →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+              <button class="pagination-btn active">1</button>
+              <button class="pagination-btn">2</button>
+              <button class="pagination-btn">3</button>
+              <button class="pagination-btn">›</button>
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <aside class="sidebar">
+            <div class="sidebar-card">
+              <h3 class="sidebar-title">🔍 Search</h3>
+              <div style="display: flex; gap: var(--space-2)">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search articles..."
+                />
+                <button class="btn btn-primary btn-sm">Go</button>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <h3 class="sidebar-title">🏷️ Categories</h3>
+              <ul class="sidebar-filter-list">
+                <li>
+                  <label
+                    class="sidebar-filter-item active"
+                    style="cursor: pointer"
+                    ><span>All Posts</span
+                    ><span class="filter-count">12</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-filter-item" style="cursor: pointer"
+                    ><span>Casting Tips</span
+                    ><span class="filter-count">5</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-filter-item" style="cursor: pointer"
+                    ><span>Baby</span><span class="filter-count">4</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-filter-item" style="cursor: pointer"
+                    ><span>Family</span
+                    ><span class="filter-count">3</span></label
+                  >
+                </li>
+                <li>
+                  <label class="sidebar-filter-item" style="cursor: pointer"
+                    ><span>Customer Stories</span
+                    ><span class="filter-count">2</span></label
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-card">
+              <h3 class="sidebar-title">⭐ Popular Posts</h3>
+              <div class="popular-posts">
+                <a href="blog-single.html" class="popular-post">
+                  <div class="popular-post-img">👶</div>
+                  <div>
+                    <div class="popular-post-title">
+                      10 Reasons to Get a Baby Casting
+                    </div>
+                    <div class="popular-post-meta">Mar 15 • 5 min read</div>
+                  </div>
+                </a>
+                <a href="blog-single.html" class="popular-post">
+                  <div class="popular-post-img">🎨</div>
+                  <div>
+                    <div class="popular-post-title">
+                      Choosing the Perfect Finish
+                    </div>
+                    <div class="popular-post-meta">Feb 28 • 4 min read</div>
+                  </div>
+                </a>
+                <a href="blog-single.html" class="popular-post">
+                  <div class="popular-post-img">💕</div>
+                  <div>
+                    <div class="popular-post-title">
+                      "It Made My Mother-in-Law Cry"
+                    </div>
+                    <div class="popular-post-meta">Jan 5 • 6 min read</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div class="sidebar-card">
+              <h3 class="sidebar-title">📧 Newsletter</h3>
+              <p
+                style="
+                  font-size: var(--text-sm);
+                  color: var(--color-text-light);
+                  margin-bottom: var(--space-4);
+                "
+              >
+                Get casting tips & exclusive offers!
+              </p>
+              <form class="newsletter-form" style="flex-direction: column">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  style="
+                    border-radius: var(--radius-md);
+                    margin-bottom: var(--space-3);
+                  "
+                />
+                <button type="submit" style="border-radius: var(--radius-md)">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+
+            <div class="sidebar-cta">
+              <div class="sidebar-cta-icon">📅</div>
+              <h4>Book a Session</h4>
+              <p>Ready to create your own memory? Book a home visit today!</p>
+              <a
+                href="contact.html"
+                class="btn btn-primary"
+                style="
+                  width: 100%;
+                  justify-content: center;
+                  margin-top: var(--space-3);
+                "
+                >Book Now</a
+              >
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a href="../index.html" class="footer-brand-logo"
+              ><div class="footer-brand-icon">🖐️</div>
+              <div>
+                <div class="footer-brand-name">Freeze Ur Memories</div>
+                <div class="footer-brand-tagline">
+                  3D Casting & Impression Studio
+                </div>
+              </div></a
+            >
+            <p class="footer-description">
+              Government-certified 3D casting studio in Coimbatore since 2018.
+            </p>
+            <div class="footer-social">
+              <a href="#" class="footer-social-link">f</a
+              ><a href="#" class="footer-social-link">▶</a
+              ><a href="#" class="footer-social-link">📷</a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="products.html">Services</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="product.html?cat=baby">Baby Casting</a></li>
+              <li><a href="product.html?cat=couple">Couple Casting</a></li>
+              <li><a href="product.html?cat=family">Family Casting</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact</h4>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">📞</div>
+                <a
+                  href="tel:09994914389"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >099949 14389</a
+                >
+              </div>
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">📍</div>
+                <span>Coimbatore, Tamil Nadu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            © 2025 Freeze Ur Memories. All rights reserved.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="privacy.html">Privacy Policy</a
+            ><a href="terms.html">Terms</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top">↑</button>
+    <div class="toast-container"></div>
+    <script src="../js/main.js"></script>
+    <script>
+      // Blog filter
+      document
+        .querySelectorAll(".blog-filter-tabs .filter-btn")
+        .forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document
+              .querySelectorAll(".blog-filter-tabs .filter-btn")
+              .forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            const filter = btn.dataset.filter;
+            document
+              .querySelectorAll(".blog-card[data-category]")
+              .forEach((card) => {
+                card.style.display =
+                  filter === "all" || card.dataset.category === filter
+                    ? ""
+                    : "none";
+              });
+          });
+        });
+    </script>
+  </body>
+</html>

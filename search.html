@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results – Freeze Ur Memories</title>
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <link rel="stylesheet" href="../css/products.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <span>🎁 Free Home Service Across Tamil Nadu!</span
+      ><button class="announcement-close">✕</button>
+    </div>
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="navbar-logo"
+          ><div class="navbar-logo-icon">🖐️</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Freeze Ur Memories</span
+            ><span class="navbar-logo-tagline"
+              >3D Casting & Impression Studio</span
+            >
+          </div></a
+        >
+        <nav class="navbar-nav">
+          <a href="../index.html" class="nav-link">Home</a
+          ><a href="products.html" class="nav-link">Services</a
+          ><a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="navbar-actions">
+          <button class="navbar-action-btn search-toggle">🔍</button
+          ><button class="navbar-action-btn cart-toggle-btn">
+            🛒<span class="navbar-badge" style="display: none">0</span></button
+          ><a href="account.html" class="navbar-action-btn">👤</a
+          ><button class="hamburger">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="overlay"></div>
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <span class="navbar-logo-name">Freeze Ur Memories</span
+        ><button class="mobile-menu-close">✕</button>
+      </div>
+      <nav class="mobile-nav">
+        <a href="../index.html">🏠 Home</a
+        ><a href="products.html">🛍️ Services</a
+        ><a href="contact.html">📞 Contact</a>
+      </nav>
+      <div class="mobile-menu-footer">
+        <a href="contact.html" class="btn btn-primary">Book Now</a>
+      </div>
+    </div>
+    <div class="cart-drawer">
+      <div class="cart-drawer-header">
+        <h2 class="cart-drawer-title">Cart</h2>
+        <button class="cart-drawer-close modal-close">✕</button>
+      </div>
+      <div class="cart-drawer-body"></div>
+      <div class="cart-drawer-footer"></div>
+    </div>
+    <div class="search-overlay">
+      <div class="search-box">
+        <div class="search-input-wrapper">
+          <span style="font-size: 1.25rem; padding: 0 var(--space-2)">🔍</span
+          ><input
+            type="text"
+            class="search-input"
+            placeholder="Search services..."
+          /><button class="search-submit">Search</button>
+        </div>
+        <div class="search-suggestions" style="display: none"></div>
+      </div>
+    </div>
+
+    <section
+      class="page-hero"
+      style="padding-block: var(--space-10) var(--space-8)"
+    >
+      <div class="page-hero-bg page-hero-bg-pink"></div>
+      <div class="page-hero-dots"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a><span class="breadcrumb-sep">›</span
+          ><span>Search</span>
+        </div>
+        <h1 class="page-hero-title">Search <span>Results</span></h1>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Search bar -->
+        <div
+          style="
+            max-width: 600px;
+            margin-inline: auto;
+            margin-bottom: var(--space-10);
+          "
+        >
+          <form id="searchForm" style="display: flex; gap: var(--space-3)">
+            <input
+              type="text"
+              class="form-control"
+              id="searchQ"
+              placeholder="Search for casting services..."
+              style="flex: 1; border-radius: var(--radius-full)"
+            />
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="border-radius: var(--radius-full)"
+            >
+              🔍 Search
+            </button>
+          </form>
+        </div>
+        <div
+          id="searchMeta"
+          style="
+            color: var(--color-text-light);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-6);
+          "
+        ></div>
+        <div id="searchResults" class="product-grid"></div>
+        <div
+          id="noResults"
+          style="display: none; text-align: center; padding: var(--space-16)"
+        >
+          <div style="font-size: 4rem; margin-bottom: var(--space-4)">🔍</div>
+          <h3
+            style="
+              font-family: var(--font-display);
+              font-size: var(--text-xl);
+              font-weight: 700;
+              margin-bottom: var(--space-3);
+            "
+          >
+            No results found
+          </h3>
+          <p
+            style="
+              color: var(--color-text-light);
+              margin-bottom: var(--space-5);
+            "
+          >
+            Try different keywords or browse all our services.
+          </p>
+          <a href="products.html" class="btn btn-primary"
+            >Browse All Services</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a href="../index.html" class="footer-brand-logo"
+              ><div class="footer-brand-icon">🖐️</div>
+              <div>
+                <div class="footer-brand-name">Freeze Ur Memories</div>
+                <div class="footer-brand-tagline">
+                  3D Casting & Impression Studio
+                </div>
+              </div></a
+            >
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="products.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Services</h4>
+            <ul class="footer-links">
+              <li><a href="product.html?cat=baby">Baby Casting</a></li>
+              <li><a href="product.html?cat=couple">Couple Casting</a></li>
+              <li><a href="product.html?cat=family">Family Casting</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact</h4>
+            <div class="footer-contact-list">
+              <div class="footer-contact-item">
+                <div class="footer-contact-icon">📞</div>
+                <a
+                  href="tel:09994914389"
+                  style="color: rgba(255, 255, 255, 0.8)"
+                  >099949 14389</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-copyright">
+            © 2025 Freeze Ur Memories. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </footer>
+    <button class="scroll-top">↑</button>
+    <div class="toast-container"></div>
+    <script src="../js/main.js"></script>
+    <script>
+      const allProducts = [
+        {
+          id: "p1",
+          name: "Baby Hand & Feet Gold Frame",
+          cat: "Baby Casting",
+          price: 3499,
+          emoji: "👶",
+          variant: "Gold",
+          desc: "Capture every tiny detail in gold metallic finish",
+        },
+        {
+          id: "p2",
+          name: "Newborn Silver Edition",
+          cat: "Baby Casting",
+          price: 2999,
+          emoji: "🍼",
+          variant: "Silver",
+          desc: "Silver metallic impression with premium wooden base",
+        },
+        {
+          id: "p3",
+          name: "Couple Hands Together",
+          cat: "Couple Casting",
+          price: 4499,
+          emoji: "💑",
+          variant: "Gold",
+          desc: "Intertwined hands cast in gold, perfect anniversary gift",
+        },
+        {
+          id: "p4",
+          name: "Family Together Forever",
+          cat: "Family Casting",
+          price: 5999,
+          emoji: "👨‍👩‍👧‍👦",
+          variant: "Gold",
+          desc: "All hands stacked — a symbol of family unity",
+        },
+        {
+          id: "p5",
+          name: "Sibling Bond Casting",
+          cat: "Sibling Casting",
+          price: 3799,
+          emoji: "👫",
+          variant: "Bronze",
+          desc: "Two hands, one heart — siblings forever in bronze",
+        },
+        {
+          id: "p6",
+          name: "Paw Print Keepsake",
+          cat: "Pet Casting",
+          price: 2499,
+          emoji: "🐾",
+          variant: "Gold",
+          desc: "Preserve your furry friend's paw print forever",
+        },
+        {
+          id: "p7",
+          name: "Wedding Day Memory",
+          cat: "Wedding Casting",
+          price: 6999,
+          emoji: "💍",
+          variant: "Gold",
+          desc: "Your wedding hands cast in premium gold",
+        },
+        {
+          id: "p8",
+          name: "3D Baby Photo Frame Set",
+          cat: "Baby Casting",
+          price: 4999,
+          emoji: "🌸",
+          variant: "Gold",
+          desc: "Casting + photo combined in a beautiful display",
+        },
+        {
+          id: "p9",
+          name: "Heart of the Family",
+          cat: "Family Casting",
+          price: 5499,
+          emoji: "🫶",
+          variant: "Gold",
+          desc: "Parent and child hands forming a heart",
+        },
+        {
+          id: "p10",
+          name: "Anniversary Special Set",
+          cat: "Couple Casting",
+          price: 7499,
+          emoji: "💏",
+          variant: "Gold",
+          desc: "Deluxe frame with couple casting + engraving",
+        },
+        {
+          id: "p11",
+          name: "Twin Impression Set",
+          cat: "Sibling Casting",
+          price: 5299,
+          emoji: "🤝",
+          variant: "Silver",
+          desc: "Special twin casting with matching frames",
+        },
+        {
+          id: "p12",
+          name: "Baby Shower Gift Box",
+          cat: "Baby Casting",
+          price: 3999,
+          emoji: "🎀",
+          variant: "Gold",
+          desc: "Complete baby casting kit in premium gift box",
+        },
+      ];
+
+      function runSearch(q) {
+        const meta = document.getElementById("searchMeta");
+        const grid = document.getElementById("searchResults");
+        const noResults = document.getElementById("noResults");
+        if (!q) {
+          meta.textContent = "";
+          grid.innerHTML = "";
+          noResults.style.display = "none";
+          return;
+        }
+        const results = allProducts.filter(
+          (p) =>
+            p.name.toLowerCase().includes(q.toLowerCase()) ||
+            p.cat.toLowerCase().includes(q.toLowerCase()) ||
+            p.desc.toLowerCase().includes(q.toLowerCase()),
+        );
+        meta.textContent = `Showing ${results.length} result${results.length !== 1 ? "s" : ""} for "${q}"`;
+        if (results.length === 0) {
+          grid.innerHTML = "";
+          noResults.style.display = "block";
+          return;
+        }
+        noResults.style.display = "none";
+        grid.innerHTML = results
+          .map(
+            (p) => `
+    <div class="product-card">
+      <div class="product-card-image"><div class="product-card-img" style="background:linear-gradient(135deg,#fce8f3,#fff5e6)">${p.emoji}</div></div>
+      <div class="product-card-body">
+        <div class="product-card-cat">${p.cat}</div>
+        <h3 class="product-card-name"><a href="product.html?id=${p.id}">${p.name}</a></h3>
+        <div class="product-card-desc">${p.desc}</div>
+        <div class="product-card-footer">
+          <span class="product-price">₹${p.price.toLocaleString("en-IN")}</span>
+          <button class="product-atc" onclick="State.addToCart({id:'${p.id}',name:'${p.name}',price:${p.price},emoji:'${p.emoji}',variant:'${p.variant}'})">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+      }
+
+      // Get query from URL
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get("q") || "";
+      if (q) {
+        document.getElementById("searchQ").value = q;
+        runSearch(q);
+      }
+
+      document.getElementById("searchForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const q = document.getElementById("searchQ").value.trim();
+        window.history.pushState({}, "", `?q=${encodeURIComponent(q)}`);
+        runSearch(q);
+      });
+    </script>
+  </body>
+</html>

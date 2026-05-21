@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 – Page Not Found | Freeze Ur Memories</title>
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/pages.css" />
+    <style>
+      .error-page {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: var(--space-16) var(--space-6);
+        background: linear-gradient(135deg, #fce8f3, #f8ecf8, #eef6fc);
+      }
+      .error-card {
+        background: white;
+        border-radius: var(--radius-2xl);
+        padding: var(--space-16) var(--space-12);
+        box-shadow: var(--shadow-xl);
+        max-width: 600px;
+        width: 100%;
+        border: 2px solid rgba(232, 24, 122, 0.1);
+      }
+      .error-num {
+        font-family: var(--font-display);
+        font-size: 8rem;
+        font-weight: 900;
+        background: linear-gradient(
+          135deg,
+          var(--color-primary),
+          var(--color-gold)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+        margin-bottom: var(--space-4);
+      }
+      .error-emoji {
+        font-size: 4rem;
+        margin-bottom: var(--space-4);
+        animation: float 3s ease-in-out infinite;
+      }
+      .error-title {
+        font-family: var(--font-display);
+        font-size: var(--text-2xl);
+        font-weight: 700;
+        color: var(--color-text-dark);
+        margin-bottom: var(--space-3);
+      }
+      .error-desc {
+        color: var(--color-text-light);
+        font-size: var(--text-md);
+        line-height: var(--leading-relaxed);
+        margin-bottom: var(--space-8);
+      }
+      .error-actions {
+        display: flex;
+        gap: var(--space-4);
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: var(--space-8);
+      }
+      .error-links {
+        display: flex;
+        gap: var(--space-3);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .error-link {
+        font-size: var(--text-sm);
+        color: var(--color-primary);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      @media (max-width: 640px) {
+        .error-card {
+          padding: var(--space-10) var(--space-6);
+        }
+        .error-num {
+          font-size: 5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="navbar-logo"
+          ><div class="navbar-logo-icon">🖐️</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Freeze Ur Memories</span
+            ><span class="navbar-logo-tagline"
+              >3D Casting & Impression Studio</span
+            >
+          </div></a
+        >
+        <div class="navbar-actions">
+          <a href="../index.html" class="btn btn-primary btn-sm">🏠 Go Home</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="error-page">
+      <div class="error-card">
+        <div class="error-emoji">🔍</div>
+        <div class="error-num">404</div>
+        <h1 class="error-title">Oops! Page Not Found</h1>
+        <p class="error-desc">
+          Looks like this page got lost in the casting mould! The page you're
+          looking for doesn't exist, may have moved, or is temporarily
+          unavailable.
+        </p>
+        <div class="error-actions">
+          <a href="../index.html" class="btn btn-primary btn-lg"
+            >🏠 Back to Home</a
+          >
+          <a href="products.html" class="btn btn-outline btn-lg"
+            >🛍️ Browse Services</a
+          >
+        </div>
+        <div class="error-links">
+          <a href="about.html" class="error-link">About Us</a>
+          <a href="contact.html" class="error-link">Contact</a>
+          <a href="faq.html" class="error-link">FAQ</a>
+          <a href="blog.html" class="error-link">Blog</a>
+          <a href="cart.html" class="error-link">Cart</a>
+        </div>
+        <div
+          style="
+            margin-top: var(--space-8);
+            padding-top: var(--space-6);
+            border-top: 1px solid var(--color-border);
+          "
+        >
+          <p style="font-size: var(--text-sm); color: var(--color-text-light)">
+            Need help?
+            <a
+              href="contact.html"
+              style="color: var(--color-primary); font-weight: 600"
+              >Contact us</a
+            >
+            or call
+            <a
+              href="tel:09994914389"
+              style="color: var(--color-primary); font-weight: 600"
+              >099949 14389</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast-container"></div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

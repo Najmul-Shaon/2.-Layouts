@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout – Freeze Ur Memories</title>
+
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
+  </head>
+  <body>
+    <div class="announcement-bar">
+      <span>🔒 Secure Checkout — Your data is safe with us</span>
+      <button class="announcement-close">✕</button>
+    </div>
+
+    <nav class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="navbar-logo">
+          <div class="navbar-logo-icon">🖐️</div>
+          <div class="navbar-logo-text">
+            <span class="navbar-logo-name">Freeze Ur Memories</span>
+            <span class="navbar-logo-tagline"
+              >3D Casting & Impression Studio</span
+            >
+          </div>
+        </a>
+        <div class="navbar-actions">
+          <a href="cart.html" class="btn btn-outline btn-sm">← Back to Cart</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="overlay"></div>
+
+    <!-- CHECKOUT PROGRESS -->
+    <div class="checkout-progress-bar">
+      <div class="container">
+        <div class="cart-progress">
+          <div class="progress-step done">
+            <div class="progress-dot">✅</div>
+            <span>Cart</span>
+          </div>
+          <div class="progress-line active-line"></div>
+          <div class="progress-step active">
+            <div class="progress-dot">📋</div>
+            <span>Checkout</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="progress-step">
+            <div class="progress-dot">🎉</div>
+            <span>Confirmation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHECKOUT SECTION -->
+    <section class="section checkout-section">
+      <div class="container">
+        <div class="checkout-layout">
+          <!-- LEFT: Form -->
+          <div class="checkout-form-side">
+            <!-- Step indicators -->
+            <div class="checkout-steps">
+              <div class="checkout-step-tab active" data-step="1">
+                <div class="step-num">1</div>
+                <span>Contact Info</span>
+              </div>
+              <div class="checkout-step-tab" data-step="2">
+                <div class="step-num">2</div>
+                <span>Delivery</span>
+              </div>
+              <div class="checkout-step-tab" data-step="3">
+                <div class="step-num">3</div>
+                <span>Payment</span>
+              </div>
+            </div>
+
+            <form id="checkoutForm" data-action="checkout">
+              <!-- STEP 1: Contact -->
+              <div class="checkout-step-panel active" id="step1">
+                <div class="checkout-step-card">
+                  <h3 class="checkout-card-title">📞 Contact Information</h3>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">First Name *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Priya"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Last Name *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Krishnan"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Email Address *</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="priya@email.com"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Phone / WhatsApp *</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      placeholder="9876543210"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Preferred Session Date</label>
+                    <input type="date" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Preferred Time Slot</label>
+                    <select class="form-control">
+                      <option>Morning (9 AM – 12 PM)</option>
+                      <option>Afternoon (12 PM – 3 PM)</option>
+                      <option>Evening (3 PM – 6 PM)</option>
+                    </select>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-lg"
+                    style="width: 100%; justify-content: center"
+                    onclick="goToStep(2)"
+                  >
+                    Continue to Delivery →
+                  </button>
+                </div>
+              </div>
+
+              <!-- STEP 2: Delivery -->
+              <div class="checkout-step-panel" id="step2">
+                <div class="checkout-step-card">
+                  <h3 class="checkout-card-title">🏠 Delivery Address</h3>
+                  <p
+                    style="
+                      font-size: var(--text-sm);
+                      color: var(--color-text-light);
+                      margin-bottom: var(--space-5);
+                    "
+                  >
+                    Our artist will visit this address for the impression
+                    session and deliver the finished casting here.
+                  </p>
+                  <div class="form-group">
+                    <label class="form-label">Address Line 1 *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="House No., Street Name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Address Line 2</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Apartment, Colony, Landmark"
+                    />
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">City *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Coimbatore"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">PIN Code *</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="641001"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">State *</label>
+                    <select class="form-control" required>
+                      <option>Tamil Nadu</option>
+                      <option>Karnataka</option>
+                      <option>Kerala</option>
+                      <option>Andhra Pradesh</option>
+                      <option>Telangana</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Special Instructions</label>
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      placeholder="Any special notes for the artist — baby's nap time, gate code, etc."
+                    ></textarea>
+                  </div>
+                  <div class="checkout-btn-row">
+                    <button
+                      type="button"
+                      class="btn btn-outline"
+                      onclick="goToStep(1)"
+                    >
+                      ← Back
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary btn-lg"
+                      onclick="goToStep(3)"
+                    >
+                      Continue to Payment →
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 3: Payment -->
+              <div class="checkout-step-panel" id="step3">
+                <div class="checkout-step-card">
+                  <h3 class="checkout-card-title">💳 Payment Method</h3>
+
+                  <div class="payment-methods">
+                    <label class="payment-method active" id="pm-upi">
+                      <input type="radio" name="payment" value="upi" checked />
+                      <div class="payment-method-content">
+                        <span class="payment-icon">📱</span>
+                        <div>
+                          <div class="payment-name">UPI Payment</div>
+                          <div class="payment-desc">
+                            PhonePe, GPay, Paytm, BHIM
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                    <label class="payment-method" id="pm-card">
+                      <input type="radio" name="payment" value="card" />
+                      <div class="payment-method-content">
+                        <span class="payment-icon">💳</span>
+                        <div>
+                          <div class="payment-name">Credit / Debit Card</div>
+                          <div class="payment-desc">
+                            Visa, Mastercard, RuPay
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                    <label class="payment-method" id="pm-netbanking">
+                      <input type="radio" name="payment" value="netbanking" />
+                      <div class="payment-method-content">
+                        <span class="payment-icon">🏦</span>
+                        <div>
+                          <div class="payment-name">Net Banking</div>
+                          <div class="payment-desc">
+                            All major banks supported
+                          </div>
+                        </div>
+                      </div>
+                    </label>
+                    <label class="payment-method" id="pm-cod">
+                      <input type="radio" name="payment" value="cod" />
+                      <div class="payment-method-content">
+                        <span class="payment-icon">💰</span>
+                        <div>
+                          <div class="payment-name">Cash on Delivery</div>
+                          <div class="payment-desc">Pay when artist visits</div>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+
+                  <!-- UPI Fields -->
+                  <div class="payment-fields" id="fields-upi">
+                    <div class="form-group">
+                      <label class="form-label">UPI ID</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="yourname@upi"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Card Fields -->
+                  <div
+                    class="payment-fields"
+                    id="fields-card"
+                    style="display: none"
+                  >
+                    <div class="form-group">
+                      <label class="form-label">Card Number</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="1234 5678 9012 3456"
+                        maxlength="19"
+                      />
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label class="form-label">Expiry</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="MM / YY"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label class="form-label">CVV</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="123"
+                          maxlength="3"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Name on Card</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="PRIYA KRISHNAN"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- Order Note -->
+                  <div class="form-group" style="margin-top: var(--space-5)">
+                    <label class="form-label">Order Notes (optional)</label>
+                    <textarea
+                      class="form-control"
+                      rows="3"
+                      placeholder="Anything else we should know?"
+                    ></textarea>
+                  </div>
+
+                  <!-- Terms -->
+                  <div class="form-group">
+                    <label
+                      style="
+                        display: flex;
+                        align-items: flex-start;
+                        gap: var(--space-3);
+                        cursor: pointer;
+                        font-size: var(--text-sm);
+                        color: var(--color-text-light);
+                      "
+                    >
+                      <input
+                        type="checkbox"
+                        required
+                        style="
+                          margin-top: 3px;
+                          accent-color: var(--color-primary);
+                        "
+                      />
+                      <span
+                        >I agree to the
+                        <a href="terms.html" style="color: var(--color-primary)"
+                          >Terms & Conditions</a
+                        >
+                        and
+                        <a
+                          href="privacy.html"
+                          style="color: var(--color-primary)"
+                          >Privacy Policy</a
+                        >.</span
+                      >
+                    </label>
+                  </div>
+
+                  <div class="checkout-btn-row">
+                    <button
+                      type="button"
+                      class="btn btn-outline"
+                      onclick="goToStep(2)"
+                    >
+                      ← Back
+                    </button>
+                    <button
+                      type="submit"
+                      class="btn btn-primary btn-lg"
+                      id="placeOrderBtn"
+                    >
+                      🔒 Place Order
+                    </button>
+                  </div>
+
+                  <div class="secure-badges">
+                    <span>🔒 SSL Secured</span>
+                    <span>🛡️ Safe Payment</span>
+                    <span>✅ Certified Studio</span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- RIGHT: Order Summary -->
+          <aside class="checkout-summary-side">
+            <div class="checkout-summary-card">
+              <h3 class="checkout-summary-title">📦 Order Summary</h3>
+              <div class="checkout-items" id="checkoutItems"></div>
+              <div class="checkout-totals" id="checkoutTotals"></div>
+            </div>
+
+            <!-- Guarantee -->
+            <div class="checkout-guarantee">
+              <div class="guarantee-item">
+                <span>♾️</span> Lifetime Guarantee on all castings
+              </div>
+              <div class="guarantee-item">
+                <span>🌿</span> 100% baby-safe materials
+              </div>
+              <div class="guarantee-item">
+                <span>🏠</span> Free home visit included
+              </div>
+              <div class="guarantee-item">
+                <span>📦</span> Free delivery across Tamil Nadu
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="toast-container"></div>
+    <script src="../js/main.js"></script>
+    <script>
+      // Checkout steps
+      function goToStep(n) {
+        document
+          .querySelectorAll(".checkout-step-panel")
+          .forEach((p) => p.classList.remove("active"));
+        document.querySelectorAll(".checkout-step-tab").forEach((t, i) => {
+          t.classList.toggle("active", i + 1 === n);
+          t.classList.toggle("done", i + 1 < n);
+        });
+        document.getElementById("step" + n)?.classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      // Payment toggle
+      document.querySelectorAll('input[name="payment"]').forEach((radio) => {
+        radio.addEventListener("change", () => {
+          document
+            .querySelectorAll(".payment-method")
+            .forEach((m) => m.classList.remove("active"));
+          radio.closest(".payment-method").classList.add("active");
+          document
+            .querySelectorAll(".payment-fields")
+            .forEach((f) => (f.style.display = "none"));
+          const fields = document.getElementById("fields-" + radio.value);
+          if (fields) fields.style.display = "block";
+        });
+      });
+
+      // Render checkout summary
+      function renderCheckoutSummary() {
+        const items = document.getElementById("checkoutItems");
+        const totals = document.getElementById("checkoutTotals");
+        if (!items) return;
+
+        if (State.cart.length === 0) {
+          items.innerHTML =
+            '<div style="text-align:center;padding:var(--space-6);color:var(--color-text-light)">No items in cart</div>';
+          return;
+        }
+
+        items.innerHTML = State.cart
+          .map(
+            (item) => `
+    <div class="checkout-item">
+      <div class="checkout-item-img">${item.emoji || "🎁"}</div>
+      <div class="checkout-item-info">
+        <div class="checkout-item-name">${item.name}</div>
+        ${item.variant ? `<div class="checkout-item-variant">${item.variant}</div>` : ""}
+        <div class="checkout-item-qty">Qty: ${item.qty}</div>
+      </div>
+      <div class="checkout-item-price">₹${(item.price * item.qty).toLocaleString("en-IN")}</div>
+    </div>
+  `,
+          )
+          .join("");
+
+        const total = State.getCartTotal();
+        totals.innerHTML = `
+    <div class="checkout-total-row"><span>Subtotal</span><span>₹${total.toLocaleString("en-IN")}</span></div>
+    <div class="checkout-total-row"><span>Shipping</span><span style="color:#22863a;font-weight:600">FREE</span></div>
+    <div class="checkout-total-row checkout-grand-total"><span>Total</span><span>₹${total.toLocaleString("en-IN")}</span></div>
+  `;
+      }
+
+      document.addEventListener("DOMContentLoaded", renderCheckoutSummary);
+
+      // Form submit
+      document
+        .getElementById("checkoutForm")
+        ?.addEventListener("submit", (e) => {
+          e.preventDefault();
+          document.getElementById("placeOrderBtn").textContent =
+            "⏳ Processing...";
+          setTimeout(() => {
+            window.location.href = "thank-you.html";
+          }, 1500);
+        });
+    </script>
+  </body>
+</html>
