@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard – Freeze Ur Memories</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../admin/admin.css">
+</head>
+<body class="admin-body">
+
+<!-- ADMIN LOGIN (shown first) -->
+<div class="admin-login-screen" id="adminLogin">
+  <div class="admin-login-card">
+    <div class="admin-login-logo">
+      <div style="font-size:3rem;margin-bottom:var(--space-3)">🖐️</div>
+      <h1 style="font-family:var(--font-display);font-size:var(--text-2xl);font-weight:700;color:var(--color-text-dark)">Freeze Ur Memories</h1>
+      <p style="color:var(--color-text-light);font-size:var(--text-sm);margin-top:var(--space-1)">Admin Panel</p>
+    </div>
+    <form id="adminLoginForm">
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" id="adminEmail" placeholder="admin@freezeurmemories.com" value="admin@freezeurmemories.com">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" id="adminPass" placeholder="••••••••" value="admin123">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;margin-top:var(--space-2)">🔐 Sign In to Admin</button>
+      <p style="text-align:center;font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-4)">Demo: admin@freezeurmemories.com / admin123</p>
+    </form>
+  </div>
+</div>
+
+<!-- ADMIN APP -->
+<div class="admin-app" id="adminApp" style="display:none">
+
+  <!-- SIDEBAR -->
+  <aside class="admin-sidebar" id="adminSidebar">
+    <div class="admin-sidebar-logo">
+      <span style="font-size:1.6rem">🖐️</span>
+      <div>
+        <div class="admin-brand">Freeze Ur Memories</div>
+        <div class="admin-brand-sub">Admin Panel</div>
+      </div>
+    </div>
+
+    <nav class="admin-nav">
+      <div class="admin-nav-section">MAIN</div>
+      <a href="#" class="admin-nav-link active" data-panel="dashboard">
+        <span class="admin-nav-icon">📊</span> Dashboard
+      </a>
+      <a href="#" class="admin-nav-link" data-panel="orders">
+        <span class="admin-nav-icon">📦</span> Orders
+        <span class="admin-nav-badge">12</span>
+      </a>
+      <a href="#" class="admin-nav-link" data-panel="bookings">
+        <span class="admin-nav-icon">📅</span> Bookings
+        <span class="admin-nav-badge">5</span>
+      </a>
+      <a href="#" class="admin-nav-link" data-panel="products">
+        <span class="admin-nav-icon">🎁</span> Products
+      </a>
+      <a href="#" class="admin-nav-link" data-panel="customers">
+        <span class="admin-nav-icon">👥</span> Customers
+      </a>
+      <div class="admin-nav-section">CONTENT</div>
+      <a href="#" class="admin-nav-link" data-panel="gallery">
+        <span class="admin-nav-icon">🖼️</span> Gallery
+      </a>
+      <a href="#" class="admin-nav-link" data-panel="blog">
+        <span class="admin-nav-icon">📝</span> Blog Posts
+      </a>
+      <a href="#" class="admin-nav-link" data-panel="reviews">
+        <span class="admin-nav-icon">⭐</span> Reviews
+      </a>
+      <div class="admin-nav-section">SETTINGS</div>
+      <a href="#" class="admin-nav-link" data-panel="analytics">
+        <span class="admin-nav-icon">📈</span> Analytics
+      </a>
+      <a href="#" class="admin-nav-link" data-panel="coupons">
+        <span class="admin-nav-icon">🎟️</span> Coupons
+      </a>
+      <a href="#" class="admin-nav-link" data-panel="settings">
+        <span class="admin-nav-icon">⚙️</span> Settings
+      </a>
+    </nav>
+
+    <div class="admin-sidebar-footer">
+      <div class="admin-user-info">
+        <div class="admin-user-avatar">A</div>
+        <div>
+          <div class="admin-user-name">Admin User</div>
+          <div class="admin-user-role">Super Admin</div>
+        </div>
+      </div>
+      <button class="admin-logout-btn" onclick="adminLogout()">🚪</button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <div class="admin-main" id="adminMain">
+
+    <!-- TOP BAR -->
+    <header class="admin-topbar">
+      <div class="admin-topbar-left">
+        <button class="admin-menu-toggle" id="menuToggle" onclick="toggleSidebar()">☰</button>
+        <div class="admin-breadcrumb" id="adminBreadcrumb">Dashboard</div>
+      </div>
+      <div class="admin-topbar-right">
+        <div class="admin-search-bar">
+          <span>🔍</span>
+          <input type="text" placeholder="Search orders, customers..." id="adminSearch">
+        </div>
+        <button class="admin-topbar-btn" onclick="showAdminToast('No new notifications','info')">🔔 <span class="admin-notif-dot"></span></button>
+        <a href="../index.html" target="_blank" class="admin-topbar-btn" title="View Site">🌐</a>
+        <div class="admin-topbar-user">
+          <div class="admin-user-avatar" style="width:34px;height:34px;font-size:0.85rem">A</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- PANELS -->
+    <div class="admin-content">
+
+      <!-- ===== DASHBOARD ===== -->
+      <div class="admin-panel active" id="panel-dashboard">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">📊 Dashboard Overview</h2>
+          <div class="admin-panel-actions">
+            <select class="admin-select">
+              <option>Last 30 Days</option>
+              <option>Last 7 Days</option>
+              <option>This Month</option>
+              <option>This Year</option>
+            </select>
+            <button class="btn btn-primary btn-sm" onclick="showAdminToast('Report exported!','success')">📥 Export Report</button>
+          </div>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="admin-kpi-grid">
+          <div class="admin-kpi-card">
+            <div class="kpi-icon" style="background:rgba(232,24,122,0.12);color:var(--color-primary)">💰</div>
+            <div class="kpi-info">
+              <div class="kpi-value">₹1,24,580</div>
+              <div class="kpi-label">Total Revenue</div>
+              <div class="kpi-trend up">↑ 18% vs last month</div>
+            </div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="kpi-icon" style="background:rgba(106,197,200,0.12);color:var(--color-teal)">📦</div>
+            <div class="kpi-info">
+              <div class="kpi-value">148</div>
+              <div class="kpi-label">Total Orders</div>
+              <div class="kpi-trend up">↑ 12% vs last month</div>
+            </div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="kpi-icon" style="background:rgba(201,168,76,0.12);color:var(--color-gold)">👥</div>
+            <div class="kpi-info">
+              <div class="kpi-value">5,241</div>
+              <div class="kpi-label">Total Customers</div>
+              <div class="kpi-trend up">↑ 8% vs last month</div>
+            </div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="kpi-icon" style="background:rgba(34,134,58,0.12);color:#22863a">⭐</div>
+            <div class="kpi-info">
+              <div class="kpi-value">4.9/5</div>
+              <div class="kpi-label">Avg. Rating</div>
+              <div class="kpi-trend up">↑ from 4.8 last month</div>
+            </div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="kpi-icon" style="background:rgba(232,24,122,0.12);color:var(--color-primary)">📅</div>
+            <div class="kpi-info">
+              <div class="kpi-value">23</div>
+              <div class="kpi-label">This Week's Sessions</div>
+              <div class="kpi-trend down">↓ 3% vs last week</div>
+            </div>
+          </div>
+          <div class="admin-kpi-card">
+            <div class="kpi-icon" style="background:rgba(106,197,200,0.12);color:var(--color-teal)">🔄</div>
+            <div class="kpi-info">
+              <div class="kpi-value">68%</div>
+              <div class="kpi-label">Repeat Customers</div>
+              <div class="kpi-trend up">↑ 5% vs last month</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="admin-charts-row">
+          <div class="admin-chart-card">
+            <div class="admin-chart-header">
+              <h3>Revenue Overview</h3>
+              <div style="display:flex;gap:var(--space-3)">
+                <span class="chart-legend"><span style="background:var(--color-primary)"></span>Revenue</span>
+                <span class="chart-legend"><span style="background:var(--color-gold)"></span>Orders</span>
+              </div>
+            </div>
+            <div class="admin-bar-chart" id="revenueChart"></div>
+          </div>
+          <div class="admin-chart-card">
+            <div class="admin-chart-header"><h3>Orders by Category</h3></div>
+            <div class="admin-donut-chart">
+              <div class="donut-ring">
+                <svg viewBox="0 0 120 120" width="160" height="160">
+                  <circle cx="60" cy="60" r="45" fill="none" stroke="#fce8f3" stroke-width="20"/>
+                  <circle cx="60" cy="60" r="45" fill="none" stroke="var(--color-primary)" stroke-width="20" stroke-dasharray="113 169" stroke-dashoffset="0" transform="rotate(-90 60 60)"/>
+                  <circle cx="60" cy="60" r="45" fill="none" stroke="var(--color-gold)" stroke-width="20" stroke-dasharray="56 226" stroke-dashoffset="-113" transform="rotate(-90 60 60)"/>
+                  <circle cx="60" cy="60" r="45" fill="none" stroke="var(--color-teal)" stroke-width="20" stroke-dasharray="34 248" stroke-dashoffset="-169" transform="rotate(-90 60 60)"/>
+                  <circle cx="60" cy="60" r="45" fill="none" stroke="#9b59b6" stroke-width="20" stroke-dasharray="23 259" stroke-dashoffset="-203" transform="rotate(-90 60 60)"/>
+                  <text x="60" y="64" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--color-text-dark)">148</text>
+                </svg>
+              </div>
+              <div class="donut-legend">
+                <div class="donut-legend-item"><span style="background:var(--color-primary)"></span>Baby (45%)</div>
+                <div class="donut-legend-item"><span style="background:var(--color-gold)"></span>Family (22%)</div>
+                <div class="donut-legend-item"><span style="background:var(--color-teal)"></span>Couple (14%)</div>
+                <div class="donut-legend-item"><span style="background:#9b59b6"></span>Others (19%)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders + Quick Actions -->
+        <div class="admin-bottom-row">
+          <div class="admin-table-card">
+            <div class="admin-card-header">
+              <h3>Recent Orders</h3>
+              <a href="#" class="admin-link" onclick="switchPanel('orders')">View All →</a>
+            </div>
+            <table class="admin-table">
+              <thead><tr><th>Order #</th><th>Customer</th><th>Service</th><th>Amount</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td><strong>#FUM-0471</strong></td><td>Priya K.</td><td>Baby Casting</td><td>₹3,499</td><td><span class="admin-status delivered">Delivered</span></td><td><button class="admin-btn-icon" onclick="showOrderModal()">👁️</button></td></tr>
+                <tr><td><strong>#FUM-0470</strong></td><td>Rajan M.</td><td>Family Casting</td><td>₹5,999</td><td><span class="admin-status processing">Processing</span></td><td><button class="admin-btn-icon" onclick="showOrderModal()">👁️</button></td></tr>
+                <tr><td><strong>#FUM-0469</strong></td><td>Sunitha R.</td><td>Couple Casting</td><td>₹4,499</td><td><span class="admin-status shipped">Shipped</span></td><td><button class="admin-btn-icon" onclick="showOrderModal()">👁️</button></td></tr>
+                <tr><td><strong>#FUM-0468</strong></td><td>Deepa V.</td><td>Baby Casting</td><td>₹2,999</td><td><span class="admin-status pending">Pending</span></td><td><button class="admin-btn-icon" onclick="showOrderModal()">👁️</button></td></tr>
+                <tr><td><strong>#FUM-0467</strong></td><td>Ananya S.</td><td>Pet Casting</td><td>₹2,499</td><td><span class="admin-status delivered">Delivered</span></td><td><button class="admin-btn-icon" onclick="showOrderModal()">👁️</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="admin-quick-actions">
+            <div class="admin-card-header"><h3>Quick Actions</h3></div>
+            <div class="quick-action-grid">
+              <button class="quick-action-btn" onclick="switchPanel('orders');showAdminToast('Order form opened','info')"><span>➕</span>New Order</button>
+              <button class="quick-action-btn" onclick="switchPanel('bookings');showAdminToast('Booking form opened','info')"><span>📅</span>New Booking</button>
+              <button class="quick-action-btn" onclick="switchPanel('products');showAdminToast('Product form opened','info')"><span>🎁</span>Add Product</button>
+              <button class="quick-action-btn" onclick="switchPanel('customers')"><span>👤</span>Add Customer</button>
+              <button class="quick-action-btn" onclick="switchPanel('blog')"><span>📝</span>New Blog Post</button>
+              <button class="quick-action-btn" onclick="switchPanel('gallery')"><span>🖼️</span>Upload Photo</button>
+            </div>
+
+            <!-- Today's sessions -->
+            <div style="margin-top:var(--space-5)">
+              <div class="admin-card-header" style="margin-bottom:var(--space-3)"><h3>Today's Sessions</h3></div>
+              <div class="today-sessions">
+                <div class="today-session"><div class="session-time">10:00 AM</div><div class="session-info-mini"><div>Baby Casting</div><div class="session-customer">Priya K. — Coimbatore</div></div><span class="admin-status processing">Upcoming</span></div>
+                <div class="today-session"><div class="session-time">2:30 PM</div><div class="session-info-mini"><div>Family Casting</div><div class="session-customer">Rajan M. — Coimbatore</div></div><span class="admin-status delivered">Done</span></div>
+                <div class="today-session"><div class="session-time">4:00 PM</div><div class="session-info-mini"><div>Couple Casting</div><div class="session-customer">Meena S. — Tirupur</div></div><span class="admin-status pending">Pending</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ORDERS ===== -->
+      <div class="admin-panel" id="panel-orders">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">📦 Orders Management</h2>
+          <div class="admin-panel-actions">
+            <button class="btn btn-primary btn-sm" onclick="showAdminToast('New order form opening...','info')">➕ New Order</button>
+            <button class="btn btn-outline btn-sm" onclick="showAdminToast('Orders exported!','success')">📥 Export CSV</button>
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="admin-filters">
+          <input type="text" class="admin-search-input" placeholder="🔍 Search orders...">
+          <select class="admin-select">
+            <option>All Status</option><option>Pending</option><option>Processing</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option>
+          </select>
+          <select class="admin-select">
+            <option>All Services</option><option>Baby Casting</option><option>Couple Casting</option><option>Family Casting</option><option>Pet Casting</option>
+          </select>
+          <input type="date" class="admin-select">
+        </div>
+
+        <!-- Orders Table -->
+        <div class="admin-table-card">
+          <table class="admin-table">
+            <thead><tr><th><input type="checkbox" onclick="toggleAllCheckboxes(this)"></th><th>Order #</th><th>Date</th><th>Customer</th><th>Service</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr><td><input type="checkbox"></td><td><strong>#FUM-0471</strong></td><td>12 Mar 2025</td><td><div class="admin-customer-cell"><div class="mini-avatar">P</div>Priya Krishnan</div></td><td>Baby Casting</td><td>₹3,499</td><td><span class="admin-status delivered">Delivered</span></td><td class="admin-actions-cell"><button class="admin-btn-icon" onclick="showOrderModal()" title="View">👁️</button><button class="admin-btn-icon" title="Edit">✏️</button><button class="admin-btn-icon danger" title="Delete">🗑️</button></td></tr>
+              <tr><td><input type="checkbox"></td><td><strong>#FUM-0470</strong></td><td>11 Mar 2025</td><td><div class="admin-customer-cell"><div class="mini-avatar" style="background:var(--color-teal)">R</div>Rajan Mohan</div></td><td>Family Casting</td><td>₹5,999</td><td><span class="admin-status processing">Processing</span></td><td class="admin-actions-cell"><button class="admin-btn-icon" onclick="showOrderModal()">👁️</button><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+              <tr><td><input type="checkbox"></td><td><strong>#FUM-0469</strong></td><td>10 Mar 2025</td><td><div class="admin-customer-cell"><div class="mini-avatar" style="background:var(--color-gold)">S</div>Sunitha Raj</div></td><td>Couple Casting</td><td>₹4,499</td><td><span class="admin-status shipped">Shipped</span></td><td class="admin-actions-cell"><button class="admin-btn-icon" onclick="showOrderModal()">👁️</button><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+              <tr><td><input type="checkbox"></td><td><strong>#FUM-0468</strong></td><td>9 Mar 2025</td><td><div class="admin-customer-cell"><div class="mini-avatar" style="background:#9b59b6">D</div>Deepa Venkat</div></td><td>Baby Casting</td><td>₹2,999</td><td><span class="admin-status pending">Pending</span></td><td class="admin-actions-cell"><button class="admin-btn-icon" onclick="showOrderModal()">👁️</button><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+              <tr><td><input type="checkbox"></td><td><strong>#FUM-0467</strong></td><td>8 Mar 2025</td><td><div class="admin-customer-cell"><div class="mini-avatar" style="background:#e67e22">A</div>Ananya Suresh</div></td><td>Pet Casting</td><td>₹2,499</td><td><span class="admin-status delivered">Delivered</span></td><td class="admin-actions-cell"><button class="admin-btn-icon" onclick="showOrderModal()">👁️</button><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+              <tr><td><input type="checkbox"></td><td><strong>#FUM-0466</strong></td><td>7 Mar 2025</td><td><div class="admin-customer-cell"><div class="mini-avatar" style="background:#27ae60">K</div>Kavitha M.</div></td><td>Wedding Casting</td><td>₹6,999</td><td><span class="admin-status processing">Processing</span></td><td class="admin-actions-cell"><button class="admin-btn-icon" onclick="showOrderModal()">👁️</button><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+            </tbody>
+          </table>
+          <div class="admin-table-footer">
+            <span style="color:var(--color-text-light);font-size:var(--text-sm)">Showing 6 of 148 orders</span>
+            <div class="pagination" style="margin:0">
+              <button class="pagination-btn active">1</button>
+              <button class="pagination-btn">2</button>
+              <button class="pagination-btn">3</button>
+              <button class="pagination-btn">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== BOOKINGS ===== -->
+      <div class="admin-panel" id="panel-bookings">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">📅 Bookings & Sessions</h2>
+          <div class="admin-panel-actions">
+            <button class="btn btn-primary btn-sm" onclick="showAdminToast('Booking form opening...','info')">➕ New Booking</button>
+          </div>
+        </div>
+        <div class="admin-calendar-view">
+          <div class="admin-calendar-header">
+            <button class="admin-cal-nav">‹</button>
+            <h3>March 2025</h3>
+            <button class="admin-cal-nav">›</button>
+          </div>
+          <div class="admin-calendar-grid">
+            <div class="cal-day-header">Sun</div><div class="cal-day-header">Mon</div><div class="cal-day-header">Tue</div><div class="cal-day-header">Wed</div><div class="cal-day-header">Thu</div><div class="cal-day-header">Fri</div><div class="cal-day-header">Sat</div>
+            <div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day">1</div>
+            <div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div><div class="cal-day has-event">5<div class="cal-event">Baby</div></div><div class="cal-day">6</div><div class="cal-day">7</div><div class="cal-day">8</div>
+            <div class="cal-day">9</div><div class="cal-day">10</div><div class="cal-day has-event">11<div class="cal-event">Family</div></div><div class="cal-day">12</div><div class="cal-day today">13</div><div class="cal-day has-event">14<div class="cal-event">2 sessions</div></div><div class="cal-day">15</div>
+            <div class="cal-day">16</div><div class="cal-day has-event">17<div class="cal-event">Couple</div></div><div class="cal-day">18</div><div class="cal-day">19</div><div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day has-event">22<div class="cal-event">Baby</div></div>
+            <div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div><div class="cal-day has-event">26<div class="cal-event">Pet</div></div><div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div>
+            <div class="cal-day">30</div><div class="cal-day">31</div>
+          </div>
+        </div>
+        <div class="admin-table-card" style="margin-top:var(--space-5)">
+          <div class="admin-card-header"><h3>Upcoming Sessions</h3></div>
+          <table class="admin-table">
+            <thead><tr><th>Date & Time</th><th>Customer</th><th>Service</th><th>Location</th><th>Artist</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>13 Mar • 10:00 AM</td><td>Priya K.</td><td>Baby Casting</td><td>Coimbatore</td><td>Kavitha R.</td><td><span class="admin-status processing">Confirmed</span></td><td><button class="admin-btn-icon">✏️</button></td></tr>
+              <tr><td>14 Mar • 11:00 AM</td><td>Rajan M.</td><td>Family Casting</td><td>Tirupur</td><td>Arun K.</td><td><span class="admin-status processing">Confirmed</span></td><td><button class="admin-btn-icon">✏️</button></td></tr>
+              <tr><td>14 Mar • 3:00 PM</td><td>Ananya S.</td><td>Couple Casting</td><td>Coimbatore</td><td>Kavitha R.</td><td><span class="admin-status pending">Pending</span></td><td><button class="admin-btn-icon">✏️</button></td></tr>
+              <tr><td>17 Mar • 9:00 AM</td><td>Deepa V.</td><td>Baby Casting</td><td>Salem</td><td>Arun K.</td><td><span class="admin-status processing">Confirmed</span></td><td><button class="admin-btn-icon">✏️</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===== PRODUCTS ===== -->
+      <div class="admin-panel" id="panel-products">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">🎁 Products Management</h2>
+          <div class="admin-panel-actions">
+            <button class="btn btn-primary btn-sm" onclick="showProductForm()">➕ Add Product</button>
+            <button class="btn btn-outline btn-sm">📥 Import</button>
+          </div>
+        </div>
+        <div class="admin-filters">
+          <input type="text" class="admin-search-input" placeholder="🔍 Search products...">
+          <select class="admin-select"><option>All Categories</option><option>Baby</option><option>Couple</option><option>Family</option><option>Sibling</option><option>Pet</option><option>Wedding</option></select>
+        </div>
+        <div class="admin-products-grid">
+          <div class="admin-product-card"><div class="admin-product-img">👶</div><div class="admin-product-info"><div class="admin-product-name">Baby Hand & Feet Gold Frame</div><div class="admin-product-cat">Baby Casting</div><div class="admin-product-price">₹3,499</div></div><div class="admin-product-actions"><span class="admin-status delivered">Active</span><div style="display:flex;gap:4px;margin-top:8px"><button class="admin-btn-icon" onclick="showProductForm()">✏️</button><button class="admin-btn-icon danger">🗑️</button></div></div></div>
+          <div class="admin-product-card"><div class="admin-product-img">🍼</div><div class="admin-product-info"><div class="admin-product-name">Newborn Silver Edition</div><div class="admin-product-cat">Baby Casting</div><div class="admin-product-price">₹2,999</div></div><div class="admin-product-actions"><span class="admin-status delivered">Active</span><div style="display:flex;gap:4px;margin-top:8px"><button class="admin-btn-icon" onclick="showProductForm()">✏️</button><button class="admin-btn-icon danger">🗑️</button></div></div></div>
+          <div class="admin-product-card"><div class="admin-product-img">💑</div><div class="admin-product-info"><div class="admin-product-name">Couple Hands Together</div><div class="admin-product-cat">Couple Casting</div><div class="admin-product-price">₹4,499</div></div><div class="admin-product-actions"><span class="admin-status delivered">Active</span><div style="display:flex;gap:4px;margin-top:8px"><button class="admin-btn-icon" onclick="showProductForm()">✏️</button><button class="admin-btn-icon danger">🗑️</button></div></div></div>
+          <div class="admin-product-card"><div class="admin-product-img">👨‍👩‍👧‍👦</div><div class="admin-product-info"><div class="admin-product-name">Family Together Forever</div><div class="admin-product-cat">Family Casting</div><div class="admin-product-price">₹5,999</div></div><div class="admin-product-actions"><span class="admin-status delivered">Active</span><div style="display:flex;gap:4px;margin-top:8px"><button class="admin-btn-icon" onclick="showProductForm()">✏️</button><button class="admin-btn-icon danger">🗑️</button></div></div></div>
+          <div class="admin-product-card"><div class="admin-product-img">🐾</div><div class="admin-product-info"><div class="admin-product-name">Paw Print Keepsake</div><div class="admin-product-cat">Pet Casting</div><div class="admin-product-price">₹2,499</div></div><div class="admin-product-actions"><span class="admin-status delivered">Active</span><div style="display:flex;gap:4px;margin-top:8px"><button class="admin-btn-icon" onclick="showProductForm()">✏️</button><button class="admin-btn-icon danger">🗑️</button></div></div></div>
+          <div class="admin-product-card add-new" onclick="showProductForm()"><div style="font-size:2.5rem;margin-bottom:8px">➕</div><div>Add New Product</div></div>
+        </div>
+        <!-- Product Form Modal -->
+        <div class="admin-modal" id="productFormModal" style="display:none">
+          <div class="admin-modal-card">
+            <div class="admin-modal-header"><h3>Add / Edit Product</h3><button onclick="closeProductForm()" class="modal-close">✕</button></div>
+            <div class="admin-modal-body">
+              <div class="form-row"><div class="form-group"><label class="form-label">Product Name</label><input type="text" class="form-control" placeholder="e.g. Baby Gold Frame"></div><div class="form-group"><label class="form-label">Category</label><select class="form-control"><option>Baby Casting</option><option>Couple Casting</option><option>Family Casting</option><option>Sibling Casting</option><option>Pet Casting</option><option>Wedding Casting</option></select></div></div>
+              <div class="form-row"><div class="form-group"><label class="form-label">Price (₹)</label><input type="number" class="form-control" placeholder="3499"></div><div class="form-group"><label class="form-label">Original Price (₹)</label><input type="number" class="form-control" placeholder="4500"></div></div>
+              <div class="form-group"><label class="form-label">Short Description</label><input type="text" class="form-control" placeholder="Brief product description"></div>
+              <div class="form-group"><label class="form-label">Full Description</label><textarea class="form-control" rows="4" placeholder="Detailed description..."></textarea></div>
+              <div class="form-row"><div class="form-group"><label class="form-label">Emoji / Icon</label><input type="text" class="form-control" placeholder="👶"></div><div class="form-group"><label class="form-label">Status</label><select class="form-control"><option>Active</option><option>Draft</option><option>Out of Stock</option></select></div></div>
+              <button class="btn btn-primary" onclick="showAdminToast('Product saved!','success');closeProductForm()">💾 Save Product</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== CUSTOMERS ===== -->
+      <div class="admin-panel" id="panel-customers">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">👥 Customers</h2>
+          <div class="admin-panel-actions">
+            <button class="btn btn-outline btn-sm" onclick="showAdminToast('Customers exported!','success')">📥 Export</button>
+          </div>
+        </div>
+        <div class="admin-filters">
+          <input type="text" class="admin-search-input" placeholder="🔍 Search customers...">
+          <select class="admin-select"><option>All Customers</option><option>New (This Month)</option><option>Repeat Customers</option><option>VIP</option></select>
+        </div>
+        <div class="admin-table-card">
+          <table class="admin-table">
+            <thead><tr><th>Customer</th><th>Email</th><th>Phone</th><th>City</th><th>Orders</th><th>Total Spent</th><th>Joined</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td><div class="admin-customer-cell"><div class="mini-avatar">P</div>Priya Krishnan</div></td><td>priya@email.com</td><td>9876543210</td><td>Coimbatore</td><td><strong>3</strong></td><td style="color:var(--color-primary);font-weight:700">₹13,997</td><td>Jan 2025</td><td><button class="admin-btn-icon">👁️</button></td></tr>
+              <tr><td><div class="admin-customer-cell"><div class="mini-avatar" style="background:var(--color-teal)">R</div>Rajan Mohan</div></td><td>rajan@email.com</td><td>9123456789</td><td>Tirupur</td><td><strong>1</strong></td><td style="color:var(--color-primary);font-weight:700">₹5,999</td><td>Mar 2025</td><td><button class="admin-btn-icon">👁️</button></td></tr>
+              <tr><td><div class="admin-customer-cell"><div class="mini-avatar" style="background:var(--color-gold)">S</div>Sunitha Raj</div></td><td>sunitha@email.com</td><td>9234567890</td><td>Coimbatore</td><td><strong>2</strong></td><td style="color:var(--color-primary);font-weight:700">₹8,498</td><td>Feb 2025</td><td><button class="admin-btn-icon">👁️</button></td></tr>
+              <tr><td><div class="admin-customer-cell"><div class="mini-avatar" style="background:#9b59b6">D</div>Deepa Venkat</div></td><td>deepa@email.com</td><td>9345678901</td><td>Salem</td><td><strong>1</strong></td><td style="color:var(--color-primary);font-weight:700">₹2,999</td><td>Mar 2025</td><td><button class="admin-btn-icon">👁️</button></td></tr>
+              <tr><td><div class="admin-customer-cell"><div class="mini-avatar" style="background:#e67e22">A</div>Ananya Suresh</div></td><td>ananya@email.com</td><td>9456789012</td><td>Chennai</td><td><strong>4</strong></td><td style="color:var(--color-primary);font-weight:700">₹18,996</td><td>Dec 2024</td><td><button class="admin-btn-icon">👁️</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===== GALLERY ===== -->
+      <div class="admin-panel" id="panel-gallery">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">🖼️ Gallery Management</h2>
+          <div class="admin-panel-actions">
+            <button class="btn btn-primary btn-sm" onclick="showAdminToast('Upload dialog opening...','info')">📤 Upload Photos</button>
+          </div>
+        </div>
+        <div class="admin-gallery-grid">
+          <div class="admin-gallery-item"><div class="admin-gallery-img">👶</div><div class="admin-gallery-overlay"><button onclick="showAdminToast('Image deleted','info')">🗑️</button><button onclick="showAdminToast('Marked featured','success')">⭐</button></div><div class="admin-gallery-label">Baby Casting</div></div>
+          <div class="admin-gallery-item"><div class="admin-gallery-img">👨‍👩‍👧‍👦</div><div class="admin-gallery-overlay"><button onclick="showAdminToast('Image deleted','info')">🗑️</button><button>⭐</button></div><div class="admin-gallery-label">Family Casting</div></div>
+          <div class="admin-gallery-item"><div class="admin-gallery-img">💑</div><div class="admin-gallery-overlay"><button>🗑️</button><button>⭐</button></div><div class="admin-gallery-label">Couple Casting</div></div>
+          <div class="admin-gallery-item"><div class="admin-gallery-img">👫</div><div class="admin-gallery-overlay"><button>🗑️</button><button>⭐</button></div><div class="admin-gallery-label">Sibling Casting</div></div>
+          <div class="admin-gallery-item"><div class="admin-gallery-img">🐾</div><div class="admin-gallery-overlay"><button>🗑️</button><button>⭐</button></div><div class="admin-gallery-label">Pet Casting</div></div>
+          <div class="admin-gallery-item"><div class="admin-gallery-img">💍</div><div class="admin-gallery-overlay"><button>🗑️</button><button>⭐</button></div><div class="admin-gallery-label">Wedding Casting</div></div>
+          <div class="admin-gallery-item add-photo" onclick="showAdminToast('Upload dialog opening...','info')"><div style="font-size:2.5rem">📤</div><div>Upload Photo</div></div>
+        </div>
+      </div>
+
+      <!-- ===== BLOG ===== -->
+      <div class="admin-panel" id="panel-blog">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">📝 Blog Management</h2>
+          <div class="admin-panel-actions">
+            <button class="btn btn-primary btn-sm" onclick="showAdminToast('Blog editor opening...','info')">➕ New Post</button>
+          </div>
+        </div>
+        <div class="admin-table-card">
+          <table class="admin-table">
+            <thead><tr><th>Title</th><th>Category</th><th>Author</th><th>Date</th><th>Views</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr><td><strong>10 Reasons to Get a Baby Casting</strong></td><td><span class="badge badge-primary">Baby</span></td><td>Kavitha R.</td><td>15 Mar 2025</td><td>2,341</td><td><span class="admin-status delivered">Published</span></td><td class="admin-actions-cell"><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+              <tr><td><strong>Choosing the Perfect Finish</strong></td><td><span class="badge badge-gold">Tips</span></td><td>Arun K.</td><td>28 Feb 2025</td><td>1,892</td><td><span class="admin-status delivered">Published</span></td><td class="admin-actions-cell"><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+              <tr><td><strong>Family Castings as Anniversary Gifts</strong></td><td><span class="badge badge-teal">Family</span></td><td>Kavitha R.</td><td>10 Feb 2025</td><td>1,234</td><td><span class="admin-status delivered">Published</span></td><td class="admin-actions-cell"><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+              <tr><td><strong>Pet Casting Complete Guide</strong></td><td><span class="badge badge-gold">Tips</span></td><td>Arun K.</td><td>—</td><td>—</td><td><span class="admin-status pending">Draft</span></td><td class="admin-actions-cell"><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===== REVIEWS ===== -->
+      <div class="admin-panel" id="panel-reviews">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">⭐ Reviews Management</h2>
+          <div class="admin-panel-actions">
+            <select class="admin-select"><option>All Reviews</option><option>Pending Approval</option><option>Approved</option><option>5 Star</option><option>4 Star & Below</option></select>
+          </div>
+        </div>
+        <div class="admin-reviews-list">
+          <div class="admin-review-card"><div class="admin-review-header"><div class="admin-customer-cell"><div class="mini-avatar">P</div><div><div style="font-weight:700">Priya Krishnan</div><div style="font-size:0.75rem;color:var(--color-text-light)">Baby Casting • 12 Mar 2025</div></div></div><div style="display:flex;align-items:center;gap:var(--space-3)"><div style="color:var(--color-gold)">★★★★★</div><span class="admin-status delivered">Approved</span></div></div><p style="font-size:var(--text-sm);color:var(--color-text);font-style:italic;margin:var(--space-3) 0">"Absolutely stunning! The casting captured every tiny wrinkle. The gold finish is gorgeous!"</p><div style="display:flex;gap:var(--space-2)"><button class="btn btn-sm" style="background:#e6f9f0;color:#22863a;border-radius:var(--radius-full)">✓ Approve</button><button class="btn btn-sm" style="background:#fee8e8;color:#e53e3e;border-radius:var(--radius-full)">✕ Remove</button></div></div>
+          <div class="admin-review-card"><div class="admin-review-header"><div class="admin-customer-cell"><div class="mini-avatar" style="background:var(--color-teal)">M</div><div><div style="font-weight:700">Meena K.</div><div style="font-size:0.75rem;color:var(--color-text-light)">Family Casting • 10 Mar 2025</div></div></div><div style="display:flex;align-items:center;gap:var(--space-3)"><div style="color:var(--color-gold)">★★★★★</div><span class="admin-status pending">Pending</span></div></div><p style="font-size:var(--text-sm);color:var(--color-text);font-style:italic;margin:var(--space-3) 0">"We gifted this to my sister. She cried when she opened it — the quality is incredible!"</p><div style="display:flex;gap:var(--space-2)"><button class="btn btn-sm" style="background:#e6f9f0;color:#22863a;border-radius:var(--radius-full)" onclick="showAdminToast('Review approved!','success')">✓ Approve</button><button class="btn btn-sm" style="background:#fee8e8;color:#e53e3e;border-radius:var(--radius-full)" onclick="showAdminToast('Review removed','info')">✕ Remove</button></div></div>
+        </div>
+      </div>
+
+      <!-- ===== ANALYTICS ===== -->
+      <div class="admin-panel" id="panel-analytics">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">📈 Analytics</h2>
+          <div class="admin-panel-actions">
+            <select class="admin-select"><option>Last 30 Days</option><option>Last 90 Days</option><option>This Year</option></select>
+          </div>
+        </div>
+        <div class="admin-kpi-grid">
+          <div class="admin-kpi-card"><div class="kpi-icon" style="background:rgba(232,24,122,0.12);color:var(--color-primary)">👁️</div><div class="kpi-info"><div class="kpi-value">12,450</div><div class="kpi-label">Page Views</div><div class="kpi-trend up">↑ 22%</div></div></div>
+          <div class="admin-kpi-card"><div class="kpi-icon" style="background:rgba(106,197,200,0.12);color:var(--color-teal)">👤</div><div class="kpi-info"><div class="kpi-value">3,210</div><div class="kpi-label">Unique Visitors</div><div class="kpi-trend up">↑ 15%</div></div></div>
+          <div class="admin-kpi-card"><div class="kpi-icon" style="background:rgba(201,168,76,0.12);color:var(--color-gold)">🛒</div><div class="kpi-info"><div class="kpi-value">4.8%</div><div class="kpi-label">Conversion Rate</div><div class="kpi-trend up">↑ 0.5%</div></div></div>
+          <div class="admin-kpi-card"><div class="kpi-icon" style="background:rgba(34,134,58,0.12);color:#22863a">⏱️</div><div class="kpi-info"><div class="kpi-value">3m 42s</div><div class="kpi-label">Avg. Session Duration</div><div class="kpi-trend up">↑ 18s</div></div></div>
+        </div>
+        <div class="admin-table-card" style="margin-top:var(--space-5)">
+          <div class="admin-card-header"><h3>Top Pages</h3></div>
+          <table class="admin-table">
+            <thead><tr><th>Page</th><th>Views</th><th>Avg. Time</th><th>Bounce Rate</th></tr></thead>
+            <tbody>
+              <tr><td>🏠 Home Page</td><td>4,521</td><td>2m 10s</td><td>32%</td></tr>
+              <tr><td>🛍️ Products Page</td><td>3,214</td><td>4m 30s</td><td>22%</td></tr>
+              <tr><td>👶 Baby Casting</td><td>2,891</td><td>5m 12s</td><td>18%</td></tr>
+              <tr><td>📞 Contact Page</td><td>1,234</td><td>1m 45s</td><td>41%</td></tr>
+              <tr><td>📝 Blog</td><td>589</td><td>6m 20s</td><td>15%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===== COUPONS ===== -->
+      <div class="admin-panel" id="panel-coupons">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">🎟️ Coupons & Discounts</h2>
+          <div class="admin-panel-actions">
+            <button class="btn btn-primary btn-sm" onclick="showAdminToast('Coupon form opening...','info')">➕ Create Coupon</button>
+          </div>
+        </div>
+        <div class="admin-table-card">
+          <table class="admin-table">
+            <thead><tr><th>Code</th><th>Type</th><th>Value</th><th>Usage</th><th>Expires</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr><td><code style="background:var(--color-primary-pale);color:var(--color-primary);padding:2px 8px;border-radius:4px;font-weight:700">FREEZE10</code></td><td>Percentage</td><td>10% off</td><td>48 / 100</td><td>31 Dec 2025</td><td><span class="admin-status delivered">Active</span></td><td class="admin-actions-cell"><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+              <tr><td><code style="background:var(--color-primary-pale);color:var(--color-primary);padding:2px 8px;border-radius:4px;font-weight:700">MEMORY20</code></td><td>Percentage</td><td>20% off</td><td>12 / 50</td><td>30 Jun 2025</td><td><span class="admin-status delivered">Active</span></td><td class="admin-actions-cell"><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+              <tr><td><code style="background:var(--color-light);color:var(--color-muted);padding:2px 8px;border-radius:4px;font-weight:700">BABY15</code></td><td>Percentage</td><td>15% off</td><td>89 / 100</td><td>28 Feb 2025</td><td><span class="admin-status pending">Expired</span></td><td class="admin-actions-cell"><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+              <tr><td><code style="background:var(--color-primary-pale);color:var(--color-primary);padding:2px 8px;border-radius:4px;font-weight:700">FLAT500</code></td><td>Fixed</td><td>₹500 off</td><td>5 / 30</td><td>31 Mar 2025</td><td><span class="admin-status delivered">Active</span></td><td class="admin-actions-cell"><button class="admin-btn-icon">✏️</button><button class="admin-btn-icon danger">🗑️</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ===== SETTINGS ===== -->
+      <div class="admin-panel" id="panel-settings">
+        <div class="admin-panel-header">
+          <h2 class="admin-panel-title">⚙️ Settings</h2>
+        </div>
+        <div class="admin-settings-grid">
+          <div class="admin-settings-card">
+            <h3>🏪 Business Info</h3>
+            <div class="form-group"><label class="form-label">Business Name</label><input type="text" class="form-control" value="Freeze Ur Memories"></div>
+            <div class="form-group"><label class="form-label">Phone</label><input type="tel" class="form-control" value="099949 14389"></div>
+            <div class="form-group"><label class="form-label">Email</label><input type="email" class="form-control" value="freezeurmemories@gmail.com"></div>
+            <div class="form-group"><label class="form-label">Address</label><input type="text" class="form-control" value="Coimbatore, Tamil Nadu"></div>
+            <button class="btn btn-primary" onclick="showAdminToast('Settings saved!','success')">💾 Save Changes</button>
+          </div>
+          <div class="admin-settings-card">
+            <h3>🔔 Notifications</h3>
+            <div class="settings-toggle-list">
+              <div class="settings-toggle"><div><div style="font-weight:600;font-size:var(--text-sm)">New Order Email</div><div style="font-size:var(--text-xs);color:var(--color-text-light)">Send email for each new order</div></div><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+              <div class="settings-toggle"><div><div style="font-weight:600;font-size:var(--text-sm)">New Booking SMS</div><div style="font-size:var(--text-xs);color:var(--color-text-light)">SMS alert for new bookings</div></div><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+              <div class="settings-toggle"><div><div style="font-weight:600;font-size:var(--text-sm)">Review Notifications</div><div style="font-size:var(--text-xs);color:var(--color-text-light)">Alert when new review submitted</div></div><label class="toggle-switch"><input type="checkbox"><span class="toggle-slider"></span></label></div>
+              <div class="settings-toggle"><div><div style="font-weight:600;font-size:var(--text-sm)">Low Stock Alert</div><div style="font-size:var(--text-xs);color:var(--color-text-light)">Alert when product stock is low</div></div><label class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></label></div>
+            </div>
+          </div>
+          <div class="admin-settings-card">
+            <h3>💳 Payment Settings</h3>
+            <div class="form-group"><label class="form-label">UPI ID</label><input type="text" class="form-control" value="freezeurmemories@upi"></div>
+            <div class="form-group"><label class="form-label">Business Bank Account</label><input type="text" class="form-control" placeholder="Account number"></div>
+            <div class="form-group"><label class="form-label">IFSC Code</label><input type="text" class="form-control" placeholder="IFSC code"></div>
+            <button class="btn btn-primary" onclick="showAdminToast('Payment settings saved!','success')">💾 Save</button>
+          </div>
+          <div class="admin-settings-card">
+            <h3>🔒 Security</h3>
+            <div class="form-group"><label class="form-label">Current Password</label><input type="password" class="form-control" placeholder="Current password"></div>
+            <div class="form-group"><label class="form-label">New Password</label><input type="password" class="form-control" placeholder="New password"></div>
+            <div class="form-group"><label class="form-label">Confirm Password</label><input type="password" class="form-control" placeholder="Confirm new password"></div>
+            <button class="btn btn-primary" onclick="showAdminToast('Password updated!','success')">🔐 Update Password</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end admin-content -->
+  </div><!-- end admin-main -->
+
+  <!-- ORDER DETAIL MODAL -->
+  <div class="admin-modal" id="orderModal" style="display:none">
+    <div class="admin-modal-card">
+      <div class="admin-modal-header"><h3>Order #FUM-0471</h3><button onclick="closeOrderModal()" class="modal-close">✕</button></div>
+      <div class="admin-modal-body">
+        <div class="order-detail-grid">
+          <div><h4 style="margin-bottom:var(--space-3);font-weight:700">Customer</h4><p>Priya Krishnan<br>priya@email.com<br>9876543210<br>Coimbatore, Tamil Nadu</p></div>
+          <div><h4 style="margin-bottom:var(--space-3);font-weight:700">Order Info</h4><p>Date: 12 Mar 2025<br>Service: Baby Casting<br>Finish: Gold Metallic<br>Frame: Wooden Frame</p></div>
+          <div><h4 style="margin-bottom:var(--space-3);font-weight:700">Payment</h4><p>Amount: <strong style="color:var(--color-primary)">₹3,499</strong><br>Method: UPI<br>Status: <span style="color:#22863a;font-weight:700">Paid</span></p></div>
+          <div><h4 style="margin-bottom:var(--space-3);font-weight:700">Status</h4>
+            <select class="form-control" style="margin-bottom:var(--space-3)"><option>Pending</option><option>Processing</option><option>Session Done</option><option>In Production</option><option selected>Delivered</option></select>
+            <button class="btn btn-primary btn-sm" onclick="showAdminToast('Status updated!','success')">Update Status</button>
+          </div>
+        </div>
+        <div style="margin-top:var(--space-5);padding-top:var(--space-5);border-top:1px solid var(--color-border)">
+          <h4 style="margin-bottom:var(--space-3);font-weight:700">Notes</h4>
+          <textarea class="form-control" rows="3" placeholder="Add internal notes..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end admin-app -->
+
+<div class="admin-toast-container" id="adminToastContainer"></div>
+
+<script src="admin.js"></script>
+</body>
+</html>
