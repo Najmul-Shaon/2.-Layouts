@@ -2,6 +2,8 @@
    SINGLE PRODUCT PAGE JS
    ============================================ */
 
+   console.log('Product JS Loaded');
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---- PRODUCT GALLERY ----

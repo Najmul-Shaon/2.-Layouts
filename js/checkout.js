@@ -2,6 +2,8 @@
    CHECKOUT PAGE JS
    ============================================ */
 
+   console.log('Checkout JS Loaded');
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---- STEP MANAGEMENT ----

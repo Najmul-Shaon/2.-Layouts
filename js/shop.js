@@ -2,6 +2,8 @@
    PRODUCTS / SHOP PAGE JS
    ============================================ */
 
+   console.log('Shop JS Loaded');
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---- PRODUCT DATA (mirrors HTML) ----
